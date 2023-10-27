@@ -4,21 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ea3542be0c.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Menu</title>
 </head>
 
 <body>
-    <div class="container mx-auto px-4 bg-[#FFFFFF]">
+    <div class="container mx-auto ">
 
         <!-- Start NavBAr Part -->
-
+        <header class="bg-white fixed z-50 top-0 left-0 w-full shadow-md transition duration-500">
+            <nav class="flex items-center max-w-screen-xl mx-auto px-6 py-3">
+                <div class="flex flex-grow">Logo</div>
+                <div class="flex items-center justify-end space-x-6"><button
+                        class=" bg-red-500 px-6 py-3 text-white poppins rounded-full ring-red-300 focus:outline-none focus:ring-4 transform transition duration-700 hover:scale-105">Sign
+                        Up</button></div>
+            </nav>
+        </header>
         <!-- END NavBar Part -->
 
 
         <!-- Start HomePage<Yassine> Part -->
         <main>
 
+            <section class="header-banner h-96 w-full bg-yellow-50 bg-[url('assets/bannerbackground-Menu.png')]">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <h1 class="text-center text-3xl md:text-4xl lg:text-5xl poppins font-semibold text-gray-700">Best
+                        food waiting for your belly</h1>
+                    <div
+                        class="rounded-full p-1 box-border mt-8 bg-white overflow-hidden ring-red-300 focus:ring-4 w-96 flex items-center">
+                        <input type="text" class=" rounded-full px-4 focus:outline-none w-full bg-transparent"
+                            placeholder="Search here ......."><button
+                            class="text-sm bg-red-500 py-3 px-6 rounded-full text-white poppins ring-red-300 focus:ring-4 transition duration-300 hover:scale-105 transform">Search</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="my-12 max-w-screen-xl mx-auto px-6">
+                <div class="flex items-center justify-center space-x-6">
+                    <p class="active_menu_tab poppins bg-red-500">Breakfast</p>
+                    <p class="menu_tab poppins">Lunch</p>
+                    <p class="menu_tab poppins">Dinner</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+                    <div
+                        class="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+                        <span
+                            class="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">Breakfast</span><img
+                            class="w-64 mx-auto transform transition duration-300 hover:scale-105"
+                            src="assets/menu/m1.png" alt="">
+                        <div class="flex flex-col items-center my-3 space-y-2">
+                            <h1 class="text-gray-900 poppins text-lg">Eggs Benedict</h1>
+                            <p class="text-gray-500 poppins text-sm text-center">Gay one the what walk then she. Demesne
+                                mention pr</p>
+                            <h2 class="text-gray-900 poppins text-2xl font-bold">$8.99</h2><button
+                                class="bg-red-500 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order
+                                Now</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+                        <span
+                            class="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">Breakfast</span><img
+                            class="w-64 mx-auto transform transition duration-300 hover:scale-105"
+                            src="assets/menu/m2.png" alt="">
+                        <div class="flex flex-col items-center my-3 space-y-2">
+                            <h1 class="text-gray-900 poppins text-lg">Breakfast Sandwich</h1>
+                            <p class="text-gray-500 poppins text-sm text-center">Gay one the what walk then she. Demesne
+                                mention pr</p>
+                            <h2 class="text-gray-900 poppins text-2xl font-bold">$9.99</h2><button
+                                class="bg-red-500 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+                        <span
+                            class="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">Breakfast</span><img
+                            class="w-64 mx-auto transform transition duration-300 hover:scale-105"
+                            src="assets/menu/m3.png" alt="">
+                        <div class="flex flex-col items-center my-3 space-y-2">
+                            <h1 class="text-gray-900 poppins text-lg">Toast Croissant Fried Egg</h1>
+                            <p class="text-gray-500 poppins text-sm text-center">Gay one the what walk then she. Demesne
+                                mention pr</p>
+                            <h2 class="text-gray-900 poppins text-2xl font-bold">$19.99</h2><button
+                                class="bg-red-500 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </main>
         <!-- END HomePage<Yassine> Part -->
@@ -27,7 +106,24 @@
 
 
         <!-- Start Footer Part -->
+        <footer class="bg-gray-800 px-6 py-12">
+            <div class=" max-w-screen-xl mx-auto px-6">
+                <div class="flex pb-8">
+                    <div class="flex flex-grow">
+                        <div>Logo</div>
+                    </div>
+                </div>
 
+                <div class="flex items-center pt-8">
+                    <div class="flex flex-grow"><span class="poppins text-gray-500">Developed by Hashira Squad -
+                            Youcode</span></div>
+                    <div class="flex justify-end items-center space-x-6"><span
+                            class="poppins text-white cursor-pointer">Privacy Policy</span><span
+                            class="poppins text-white cursor-pointer">Terms of Use</span><span
+                            class="poppins text-white cursor-pointer">Pricing</span></div>
+                </div>
+            </div>
+        </footer>
         <!-- END Footer Part -->
 
     </div>
