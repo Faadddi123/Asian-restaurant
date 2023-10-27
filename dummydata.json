@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Hot Nodles",
+        "category": "Nodles",
+        "price": 29.5,
+        "url": "assets/menu/m1.png"
+    },
+    {
+        "id": 2,
+        "name": "Hot Nodles",
+        "category": "Nodles",
+        "price": 19.5,
+        "url": "assets/menu/m2.png"
+    },
+    {
+        "id": 3,
+        "name": "salt Nodles",
+        "category": "Nodles",
+        "price": 19.5,
+        "url": "assets/menu/m3.png"
+    },
+    {
+        "id": 4,
+        "name": "sushi naruto",
+        "category": "sushi",
+        "price": 19.5,
+        "url": "assets/menu/m4.png"
+    },
+    {
+        "id": 5,
+        "name": "Hot sushi",
+        "category": "sushi",
+        "price": 19.5,
+        "url": "assets/menu/m5.png"
+    },
+    {
+        "id": 6,
+        "name": "Hot sushi",
+        "category": "sushi",
+        "price": 19.5,
+        "url": "assets/menu/m6.png"
+    },
+    {
+        "id": 7,
+        "name": "Hot sushi",
+        "category": "sushi",
+        "price": 19.5,
+        "url": "assets/menu/m7.png"
+    }
+]
