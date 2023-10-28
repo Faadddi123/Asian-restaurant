@@ -82,12 +82,11 @@
             <section class="my-12 max-w-screen-xl mx-auto px-6 ">
                 <div class="flex items-center justify-center space-x-6 cursor-pointer">
                     <button class="filter-button poppins rounded-full px-4 py-1 activeButton"
-                        onclick="filterMenu('all')">All
-                    </button>
+                        onclick="filterMenu('all')">all</button>
                     <button class="filter-button poppins rounded-full px-4 py-1"
                         onclick="filterMenu('Nodles')">Nodles</button>
                     <button class="filter-button poppins rounded-full px-4 py-1"
-                        onclick="filterMenu('Sushi')">Sushi</button>
+                        onclick="filterMenu('Sushi')">sushi</button>
 
 
 
@@ -106,8 +105,12 @@
         </main>
         <!-- Paginations Buttons -->
         <div id="pagination" class="flex my-12 justify-center gap-5">
+            <button id="prevBtn"
+                class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">Previw</button>
 
-
+            <span id="currentPage"></span>
+            <button id="nextBtn"
+                class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">Next</button>
         </div>
         =
 
