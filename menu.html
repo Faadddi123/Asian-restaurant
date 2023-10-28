@@ -19,19 +19,19 @@
 <body>
     <div class="container mx-auto ">
 
-        <!-- Start NavBAr Part -->
+
         <!-- Start NavBar<Fadi> Part -->
         <header class="bg-white/30 fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
             <nav class="bg-white p-4">
                 <div class="container mx-auto flex justify-between items-center">
                     <div class="text-black text-lg font-bold">Logo</div>
                     <div class="hidden md:flex space-x-10">
-                        <a href="#"
+                        <a href="index.html"
                             class="text-black bg-neutral-400 hover:text-red-600 rounded-md px-1 t text-lg">Home</a>
-                        <a href="#" class="text-black text-lg hover:text-red-600">About</a>
-                        <a href="#" class="text-black text-lg hover:text-red-600">Menu</a>
-                        <a href="#" class="text-black text-lg hover:text-red-600">Pages</a>
-                        <a href="#" class="text-black text-lg hover:text-red-600">Contact</a>
+                        <a href="about.html" class="text-black text-lg hover:text-red-600">About</a>
+                        <a href="menu.html" class="text-black text-lg hover:text-red-600">Menu</a>
+                        <a href="customOrder.html" class="text-black text-lg hover:text-red-600">CustomO rder.html</a>
+                        <a href="contact.html" class="text-black text-lg hover:text-red-600">Contact</a>
                     </div>
                     <div class="cursor-pointer">
                         <a id="cartIcon">
@@ -122,8 +122,7 @@
 
     <!-- cCart Part -->
 
-    <div id="shopping"
-        class="hidden  pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 my-[60px]">
+    <div id="shopping" class="hidden  pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 my-[60px]">
 
         <div class="pointer-events-auto w-screen max-w-md">
             <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
@@ -184,41 +183,31 @@
 
     <!-- Cart Part -->
 
-    <!-- Start Footer Part -->
-    <footer class="bg-gray-800 px-6 py-12">
-        <div class=" max-w-screen-xl mx-auto px-6">
-            <div class="flex pb-8">
-                <div class="flex flex-grow">
-                    <div>Logo</div>
-                </div>
-            </div>
+    <!-- Start Footer<Fadi> Part -->
 
-            <div class="flex items-center pt-8">
-                <div class="flex flex-grow"><span class="poppins text-gray-500">Developed by Hashira Squad -
-                        Youcode</span></div>
-                <div class="flex justify-end items-center space-x-6"><span
-                        class="poppins text-white cursor-pointer">Privacy Policy</span><span
-                        class="poppins text-white cursor-pointer">Terms of Use</span><span
-                        class="poppins text-white cursor-pointer">Pricing</span></div>
+    <footer class="bg-black  shadow  dark:bg-black ">
+        <div
+            class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between align-middle justify-center h-32">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                    class="hover:underline">AsianFood.ma</a>. All Rights Reserved.
+            </span>
+            <div class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <div class="mr-8">
+                    Terms of Service
+                </div>
+                <div>
+                    Privacy Policy
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/ea3542be0c.js" crossorigin="anonymous"></script>
-    <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        menuToggle.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
-    </script>
-
-
-    <!-- END Footer Part -->
+    <!-- END Footer<Fadi> Part -->
     <script src="js/pagination.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/fadi.js"></script>
     <script src="js/filter.js"></script>
+
 </body>
 
 </html>
