@@ -5,12 +5,19 @@ let listCards = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('
 let openShopping = document.getElementById('shopping');
 let closeShopping = document.getElementById('closeShopping');
 let listCard = document.getElementById('listCart');
-
+let cartIcon = document.getElementById("cartIcon")
 // when clcik 
 closeShopping.addEventListener('click', () => {
     openShopping.classList.add('hidden');
 })
-
+cartIcon.addEventListener('click', () => {
+    if (openShopping.classList.contains('hidden')) {
+        return openShopping.classList.remove('hidden');
+    }
+    else {
+        return openShopping.classList.add('hidden');
+    }
+})
 
 
 
@@ -143,7 +150,7 @@ const reloadCard = () => {
             <div class="flex">
             <button onclick="changeQuantity(${item.id}, ${item.quantity - 1},${true})"
              type="button"
-            class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+            class="font-medium text-red-600 hover:text-red-500">Remove</button>
             </div>
             </div>
             </div>`;
