@@ -2,17 +2,14 @@
 let listCards = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 
 // bring btns cart and cart
-// let openShopping = document.querySelector('.shopping');
-// let closeShopping = document.querySelector('.closeShopping');
+let openShopping = document.getElementById('shopping');
+let closeShopping = document.getElementById('closeShopping');
 let listCard = document.getElementById('listCart');
 
-// // when clcik 
-// openShopping.addEventListener('click', ()=>{
-//     body.classList.add('active');
-// })
-// closeShopping.addEventListener('click', ()=>{
-//     body.classList.remove('active');
-// })
+// when clcik 
+closeShopping.addEventListener('click', () => {
+    openShopping.classList.add('hidden');
+})
 
 
 
@@ -38,6 +35,8 @@ async function addToCard(id) {
     }
     //after that update html cart
     reloadCard();
+
+    openShopping.classList.remove('hidden');
 
 }
 
