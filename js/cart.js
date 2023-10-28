@@ -171,4 +171,7 @@ const reloadCard = () => {
 
 
 
-
+// build art with items from local storage everytime  page load
+window.addEventListener("load", (event) => {
+    reloadCard()
+});
