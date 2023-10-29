@@ -127,11 +127,11 @@ async function createMenuElement(item) {
     outerDiv.innerHTML = `<span
     class="bg-red-100 border border-red-500 rounded-full text-red-500 text-sm poppins px-4 py-1 inline-block mb-4 ">${item.category}</span><img
     class="w-64 mx-auto transform transition duration-300 hover:scale-105"
-    src="assets/menu/m2.png" alt="">
+    src="${item.url}" alt="${item.name}">
 <div class="flex flex-col items-center my-3 space-y-2">
-    <h1 class="text-gray-900 poppins text-lg">${item.name}</h1>
+    <h1  class="text-gray-900 poppins text-lg"><a href="http://127.0.0.1:5500/customOrder.html?id=${item.id}">${item.name}</a></h1>
 
-    <h2 class="text-gray-900 poppins text-2xl font-bold">$9.99</h2>
+    <h2 class="text-gray-900 poppins text-2xl font-bold">$${item.price}</h2>
     <button onclick="addToCard(${item.id})"
         class="bg-red-500 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order
         Now</button>

@@ -1,12 +1,20 @@
 // Extra Information
 
-
 const inputUser = document.getElementById("input-user")
 const checkerBtn = document.getElementById("checker")
 const loader = document.getElementById("loader")
 const msgResponse = document.getElementById("msgResponse")
 
 
+
+
+
+
+
+
+
+
+// checking input user
 const checkInput = async () => {
     console.log(inputUser.value)
     if (inputUser.value === '') return;
