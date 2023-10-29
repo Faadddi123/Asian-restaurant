@@ -1,30 +1,25 @@
-// ...
+
 
 // Add event listener to filter buttons
 const filterButtons = document.querySelectorAll(".filter-button");
 filterButtons.forEach((button) => {
+
     button.addEventListener("click", () => {
+
+        // After every click on btn loop throudth all btns and remove active class
+        filterButtons.forEach((btn) => {
+            btn.classList.remove("activeButton");
+        });
+
+        // Add activeButton class to the clicked button
+        button.classList.add("activeButton");
         const category = button.textContent;
-        // filterMenu(category);
+
         paginationFetch(category)
-        console.log("filterbutton")
+
+
     });
 });
 
-// ...
 
-// Modify the filterMenu function
-// async function filterMenu(category) {
-//     // You can keep the code that fetches the filtered data from the server
 
-//     const menuItems = document.querySelectorAll(".cardMenu");
-
-//     menuItems.forEach((item) => {
-//         const itemCategory = item.dataset.category;
-//         if (category === "all" || itemCategory.toLowerCase() === category.toLowerCase()) {
-//             item.style.display = "block"; // Show matching items
-//         } else {
-//             item.style.display = "none"; // Hide non-matching items
-//         }
-//     });
-// }
