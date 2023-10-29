@@ -1,205 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/ea3542be0c.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ea3542be0c.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Menu</title>
-</head>
-<style>
+  </head>
+  <style>
     .activeButton {
-        background-color: red !important;
-        color: white !important;
+      background-color: red !important;
+      color: white !important;
     }
-</style>
+  </style>
 
-<body>
-    <div class="container mx-auto ">
+  <body>
+    <div class="container mx-auto">
+      <!-- Start NavBar<Fadi> Part -->
+      <header
+        class="bg-white/30 fixed z-50 top-0 left-0 w-full shadow-md transition duration-500"
+      >
+        <nav class="bg-white p-4">
+          <div class="container mx-auto flex justify-between items-center">
+            <div class="text-black text-lg font-bold">Logo</div>
+            <div class="hidden md:flex space-x-10">
+              <a
+                href="index.html"
+                class="text-black bg-neutral-400 hover:text-red-600 rounded-md px-1 t text-lg"
+                >Home</a
+              >
+              <a href="about.html" class="text-black text-lg hover:text-red-600"
+                >About</a
+              >
+              <a href="menu.html" class="text-black text-lg hover:text-red-600"
+                >Menu</a
+              >
+              <a
+                href="customOrder.html"
+                class="text-black text-lg hover:text-red-600"
+                >CustomO rder.html</a
+              >
+              <a
+                href="contact.html"
+                class="text-black text-lg hover:text-red-600"
+                >Contact</a
+              >
+            </div>
+            <div class="cursor-pointer">
+              <a id="cartIcon">
+                <i
+                  class="transition fas fa-shopping-cart hover:rotate-45 hover:transition"
+                  style="color: #8b8b8b"
+                ></i>
+              </a>
+            </div>
+            <div class="md:hidden">
+              <button id="menu-toggle" class="text-black focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="mobile-menu" class="md:hidden hidden bg-gray-700 p-4">
+            <a href="#" class="block text-white py-2">Home</a>
+            <a href="#" class="block text-white py-2">About</a>
+            <a href="#" class="block text-white py-2">Services</a>
+            <a href="#" class="block text-white py-2">Contact</a>
+          </div>
+        </nav>
+      </header>
+      <!-- END NavBar Part -->
 
+      <!-- Start HomePage<Yassine> Part -->
+      <main>
+        <section
+          class="header-banner h-96 w-full bg-yellow-50 bg-[url('assets/bannerbackground-Menu.png')]"
+        >
+          <div class="flex flex-col items-center justify-center h-full">
+            <h1
+              class="text-center text-3xl md:text-4xl lg:text-5xl poppins font-semibold text-gray-700"
+            >
+              Best food waiting for your belly
+            </h1>
+            <div
+              class="rounded-full p-1 box-border mt-8 bg-white overflow-hidden ring-red-300 focus:ring-4 w-96 flex items-center"
+            >
+              <input
+                type="text"
+                class="rounded-full px-4 focus:outline-none w-full bg-transparent"
+                placeholder="Search here ......."
+              /><button
+                class="text-sm bg-red-500 py-3 px-6 rounded-full text-white poppins ring-red-300 focus:ring-4 transition duration-300 hover:scale-105 transform"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </section>
 
-        <!-- Start NavBar<Fadi> Part -->
-        <header class="bg-white/30 fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
-            <nav class="bg-white p-4">
-                <div class="container mx-auto flex justify-between items-center">
-                    <div class="text-black text-lg font-bold">Logo</div>
-                    <div class="hidden md:flex space-x-10">
-                        <a href="index.html"
-                            class="text-black bg-neutral-400 hover:text-red-600 rounded-md px-1 t text-lg">Home</a>
-                        <a href="about.html" class="text-black text-lg hover:text-red-600">About</a>
-                        <a href="menu.html" class="text-black text-lg hover:text-red-600">Menu</a>
-                        <a href="customOrder.html" class="text-black text-lg hover:text-red-600">CustomO rder.html</a>
-                        <a href="contact.html" class="text-black text-lg hover:text-red-600">Contact</a>
-                    </div>
-                    <div class="cursor-pointer">
-                        <a id="cartIcon">
-                            <i class="transition fas fa-shopping-cart hover:rotate-45 hover:transition"
-                                style="color: #8b8b8b"></i>
+        <section class="my-12 max-w-screen-xl mx-auto px-6">
+          <div
+            class="flex items-center justify-center space-x-6 cursor-pointer"
+          >
+            <button
+              class="filter-button poppins rounded-full px-4 py-1 activeButton"
+              onclick="filterMenu('all')"
+            >
+              All
+            </button>
+            <button
+              class="filter-button poppins rounded-full px-4 py-1"
+              onclick="filterMenu('Nodles')"
+            >
+              Nodles
+            </button>
+            <button
+              class="filter-button poppins rounded-full px-4 py-1"
+              onclick="filterMenu('Sushi')"
+            >
+              Sushi
+            </button>
+          </div>
 
+          <div
+            id="containerMenu"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12"
+          ></div>
+        </section>
+      </main>
+      <!-- Paginations Buttons -->
+      <div id="pagination" class="flex my-12 justify-center gap-5"></div>
+      =
 
-                        </a>
-                    </div>
-                    <div class="md:hidden">
-                        <button id="menu-toggle" class="text-black focus:outline-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                    d="M4 6h16M4 12h16m-7 6h7"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div id="mobile-menu" class="md:hidden hidden bg-gray-700 p-4">
-                    <a href="#" class="block text-white py-2">Home</a>
-                    <a href="#" class="block text-white py-2">About</a>
-                    <a href="#" class="block text-white py-2">Services</a>
-                    <a href="#" class="block text-white py-2">Contact</a>
-                </div>
-            </nav>
-        </header>
-        <!-- END NavBar Part -->
-
-
-        <!-- Start HomePage<Yassine> Part -->
-        <main>
-            <section class="header-banner h-96 w-full bg-yellow-50 bg-[url('assets/bannerbackground-Menu.png')]">
-                <div class="flex flex-col items-center justify-center h-full">
-                    <h1 class="text-center text-3xl md:text-4xl lg:text-5xl poppins font-semibold text-gray-700">Best
-                        food waiting for your belly</h1>
-                    <div
-                        class="rounded-full p-1 box-border mt-8 bg-white overflow-hidden ring-red-300 focus:ring-4 w-96 flex items-center">
-                        <input type="text" class=" rounded-full px-4 focus:outline-none w-full bg-transparent"
-                            placeholder="Search here ......."><button
-                            class="text-sm bg-red-500 py-3 px-6 rounded-full text-white poppins ring-red-300 focus:ring-4 transition duration-300 hover:scale-105 transform">Search</button>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="my-12 max-w-screen-xl mx-auto px-6 ">
-                <div class="flex items-center justify-center space-x-6 cursor-pointer">
-                    <button class="filter-button poppins rounded-full px-4 py-1 activeButton"
-                        onclick="filterMenu('all')">All
-                    </button>
-                    <button class="filter-button poppins rounded-full px-4 py-1"
-                        onclick="filterMenu('Nodles')">Nodles</button>
-                    <button class="filter-button poppins rounded-full px-4 py-1"
-                        onclick="filterMenu('Sushi')">Sushi</button>
-
-
-
-                </div>
-
-
-
-                <div id="containerMenu" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-
-
-
-
-                </div>
-            </section>
-
-        </main>
-        <!-- Paginations Buttons -->
-        <div id="pagination" class="flex my-12 justify-center gap-5">
-
-
-        </div>
-        =
-
-        <!-- END HomePage<Yassine> Part -->
-
-
-
-
-
-
+      <!-- END HomePage<Yassine> Part -->
     </div>
 
     <!-- cCart Part -->
 
-    <div id="shopping" class="hidden  pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 my-[60px]">
-
-        <div class="pointer-events-auto w-screen max-w-md">
-            <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-                    <div class="flex items-start justify-between">
-                        <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart
-                        </h2>
-                        <div class="ml-3 flex h-7 items-center">
-                            <button id="closeShopping" type="button"
-                                class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
-                                <span class="absolute -inset-0.5"></span>
-                                <span class="sr-only">Close panel</span>
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-
-
-                    <div class="mt-8">
-                        <div class="flow-root">
-                            <ul role="list" id="listCart" class="-my-6 divide-y divide-gray-200">
-
-                                <!-- More products... -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
-                    <div class="flex justify-between text-base font-medium text-gray-900">
-                        <p>Subtotal</p>
-                        <p id="totalPrice">$0</p>
-                    </div>
-                    <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
-                    <div class="mt-6">
-                        <a href="#"
-                            class="flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700">Checkout</a>
-                    </div>
-                    <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-                        <p>
-                            or
-                            <button type="button" class="font-medium text-red-600 hover:text-red-500">
-                                View in Invoice
-                                <span aria-hidden="true"> &rarr;</span>
-                            </button>
-                        </p>
-                    </div>
-                </div>
+    <div
+      id="shopping"
+      class="hidden pointer-events-none fixed inset-y-0 right-0 max-w-full pl-10 my-[60px]"
+    >
+      <div class="pointer-events-auto w-screen max-w-md">
+        <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+          <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+            <div class="flex items-start justify-between">
+              <h2
+                class="text-lg font-medium text-gray-900"
+                id="slide-over-title"
+              >
+                Shopping cart
+              </h2>
+              <div class="ml-3 flex h-7 items-center">
+                <button
+                  id="closeShopping"
+                  type="button"
+                  class="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
+                >
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Close panel</span>
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
+
+            <div class="mt-8">
+              <div class="flow-root">
+                <ul
+                  role="list"
+                  id="listCart"
+                  class="-my-6 divide-y divide-gray-200"
+                >
+                  <!-- More products... -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
+            <div
+              class="flex justify-between text-base font-medium text-gray-900"
+            >
+              <p>Subtotal</p>
+              <p id="totalPrice">$0</p>
+            </div>
+            <p class="mt-0.5 text-sm text-gray-500">
+              Shipping and taxes calculated at checkout.
+            </p>
+            <div class="mt-6">
+              <a
+                href="#"
+                class="flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700"
+                >Checkout</a
+              >
+            </div>
+            <div
+              class="mt-6 flex justify-center text-center text-sm text-gray-500"
+            >
+              <p>
+                or
+                <button
+                  type="button"
+                  class="font-medium text-red-600 hover:text-red-500"
+                >
+                  View in Invoice
+                  <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-
 
     <!-- Cart Part -->
 
     <!-- Start Footer<Fadi> Part -->
 
-    <footer class="bg-black  shadow  dark:bg-black ">
+    <footer class="bg-black shadow dark:bg-black">
+      <div
+        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between align-middle justify-center h-32"
+      >
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >© 2023 <a class="hover:underline">AsianFood.ma</a>. All Rights
+          Reserved.
+        </span>
         <div
-            class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between align-middle justify-center h-32">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                    class="hover:underline">AsianFood.ma</a>. All Rights Reserved.
-            </span>
-            <div class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                <div class="mr-8">
-                    Terms of Service
-                </div>
-                <div>
-                    Privacy Policy
-                </div>
-            </div>
+          class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0"
+        >
+          <div class="mr-8">Terms of Service</div>
+          <div>Privacy Policy</div>
         </div>
+      </div>
     </footer>
 
     <!-- END Footer<Fadi> Part -->
@@ -207,17 +268,8 @@
     <script src="js/cart.js"></script>
     <script src="js/fadi.js"></script>
     <script src="js/filter.js"></script>
-
-</body>
-
+  </body>
 </html>
-
-
-
-
-
-
-
 
 <!-- 
 <div
