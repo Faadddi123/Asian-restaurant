@@ -1,51 +1,128 @@
 [
     {
         "id": 1,
-        "name": "Hot Nodles",
-        "category": "Nodles",
+        "name": "Eggs Benedict",
+        "category": "breakfast",
         "price": 29.5,
-        "url": "assets/menu/m1.png"
+        "url": "assets/menu/breakfast1.png"
     },
     {
         "id": 2,
-        "name": "Hot Nodles",
-        "category": "Nodles",
+        "name": "Beef Steak",
+        "category": "Lunch",
         "price": 19.5,
-        "url": "assets/menu/m2.png"
+        "url": "assets/menu/lunch1.png"
     },
     {
         "id": 3,
-        "name": "salt Nodles",
-        "category": "Nodles",
+        "name": "Baked Chicken",
+        "category": "Dinner",
         "price": 19.5,
-        "url": "assets/menu/m3.png"
+        "url": "assets/menu/dinner1.png"
     },
     {
         "id": 4,
-        "name": "sushi naruto",
-        "category": "sushi",
+        "name": "Breakfast Sandwich",
+        "category": "Breakfast",
         "price": 19.5,
-        "url": "assets/menu/m4.png"
+        "url": "assets/menu/breakfast2.png"
     },
     {
         "id": 5,
-        "name": "Hot sushi",
-        "category": "sushi",
+        "name": "Honey with Peppers",
+        "category": "Lunch",
         "price": 19.5,
-        "url": "assets/menu/m5.png"
+        "url": "assets/menu/lunch2.png"
     },
     {
         "id": 6,
-        "name": "Hot sushi",
-        "category": "sushi",
+        "name": "Lemony Salmaon Piccata",
+        "category": "Dinner",
         "price": 19.5,
-        "url": "assets/menu/m6.png"
+        "url": "assets/menu/dinner2.png"
     },
     {
         "id": 7,
-        "name": "Hot sushi",
-        "category": "sushi",
+        "name": "Baked Chiken",
+        "category": "Breakfast",
         "price": 19.5,
-        "url": "assets/menu/m7.png"
+        "url": "assets/menu/breakfast3.png"
+    },
+    {
+        "id": 8,
+        "name": "Bagel and cream cheese",
+        "category": "Breakfast",
+        "price": 29.5,
+        "url": "assets/menu/breakfast4.png"
+    },
+    {
+        "id": 9,
+        "name": "Tarrgaon Rubbed Salmon",
+        "category": "Lunch",
+        "price": 19.5,
+        "url": "assets/menu/lunch3.png"
+    },
+    {
+        "id": 10,
+        "name": "Garlic Butter Baked Salmon",
+        "category": "Dinner",
+        "price": 19.5,
+        "url": "assets/menu/dinner4.png"
+    },
+    {
+        "id": 11,
+        "name": "Fried Egg Toast Brunch",
+        "category": "Breakfast",
+        "price": 19.5,
+        "url": "assets/menu/breakfast5.png"
+    },
+    {
+        "id": 12,
+        "name": "japan Lunch",
+        "category": "Lunch",
+        "price": 19.5,
+        "url": "assets/menu/lunch4.png"
+    },
+    {
+        "id": 13,
+        "name": "French Fried with Cheese",
+        "category": "Dinner",
+        "price": 19.5,
+        "url": "assets/menu/dinner4.png"
+    },
+    {
+        "id": 14,
+        "name": "Fried Egg Toast Brunch",
+        "category": "Breakfast",
+        "price": 19.5,
+        "url": "assets/menu/breakfast6.png"
+    },
+    {
+        "id": 15,
+        "name": "Fried Chicken naruto",
+        "category": "Lunch",
+        "price": 19.5,
+        "url": "assets/menu/lunch5.png"
+    },
+    {
+        "id": 16,
+        "name": "Pork Tenderion",
+        "category": "Dinner",
+        "price": 19.5,
+        "url": "assets/menu/dinner5.png"
+    },
+    {
+        "id": 17,
+        "name": "healthy Meal Plan",
+        "category": "Lunch",
+        "price": 19.5,
+        "url": "assets/menu/lunch6.png"
+    },
+    {
+        "id": 18,
+        "name": "Lentil Salad",
+        "category": "Dinner",
+        "price": 19.5,
+        "url": "assets/menu/dinner6.png"
     }
 ]

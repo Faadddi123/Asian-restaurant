@@ -1,18 +1,25 @@
 // Extra Information
 
-
 const inputUser = document.getElementById("input-user")
 const checkerBtn = document.getElementById("checker")
 const loader = document.getElementById("loader")
 const msgResponse = document.getElementById("msgResponse")
 
 
+
+
+
+
+
+
+
+
+// checking input user
 const checkInput = async () => {
     console.log(inputUser.value)
     if (inputUser.value === '') return;
     else {
         msgResponse.textContent = ``
-
         loader.classList.remove("hidden")
         const response = await fetch("https://chat-asian-hlet.onrender.com/checker", {
             method: "POST",
@@ -37,6 +44,8 @@ const checkInput = async () => {
 
             msgResponse.textContent = `baghi t9olbni kayn chi ${inputUser.value} m3a lmakla`
         }
+
+
     }
 
 }
