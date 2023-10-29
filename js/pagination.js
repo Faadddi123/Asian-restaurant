@@ -129,12 +129,19 @@ async function createMenuElement(item) {
     class="w-64 mx-auto transform transition duration-300 hover:scale-105"
     src="${item.url}" alt="${item.name}">
 <div class="flex flex-col items-center my-3 space-y-2">
-    <h1  class="text-gray-900 poppins text-lg"><a href="http://127.0.0.1:5500/customOrder.html?id=${item.id}">${item.name}</a></h1>
+    <h1  class="text-gray-900 poppins text-lg">${item.name}</h1>
 
     <h2 class="text-gray-900 poppins text-2xl font-bold">$${item.price}</h2>
-    <button onclick="addToCard(${item.id})"
-        class="bg-red-500 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order
-        Now</button>
+   <div >
+   <button onclick="addToCard(${item.id})"
+   class="bg-red-500 text-white px-6 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order
+   Now</button>
+   <a 
+   class="bg-transparent hover:bg-red-500 hover:text-white border border-red-500 hover:border-transparent text-black  px-6 py-2  outline-red-500 poppins rounded-full mt-24 transform transition duration-300 hover:scale-105"
+   href="${window.location.origin}/customOrder.html?id=${item.id}"
+   >Customize
+   </a>
+   </div>
 </div>
     `
     // Append the entire structure to the document body
