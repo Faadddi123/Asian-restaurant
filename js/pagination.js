@@ -2,34 +2,47 @@ const containerMenu = document.getElementById("containerMenu")
 
 
 // Define variables
-const itemsPerPage = 3; // Number of items per page
+const itemsPerPage = 4; // Number of items per page
 let currentPage = 1;
 let data = []; // Array to store the fetched data
 
-// Fetch the JSON data
-fetch("../dummydata.json")
-    .then((response) => response.json())
-    .then((fetchedData) => {
-        data = fetchedData;
-        updatePage(); // Call the function to display the initial page
-        reloadCard()
-    })
-    .catch((error) => {
-        console.error("Error fetching Product:", error);
-    });
 
+// when page load display all menu
+window.addEventListener("load", () => {
+    console.log("on load")
+    paginationFetch()
+})
+
+const paginationFetch = (category = "all") => {
+    fetch("../dummydata.json")
+        .then((response) => response.json())
+        .then((fetchedData) => {
+            if (category === "all") {
+                data = fetchedData;
+                currentPage = 1
+                updatePage(); // Call the function to display the initial page
+            }
+            else {
+
+                data = fetchedData.filter((item) => item.category === category);
+                currentPage = 1
+                updatePage(); // Call the function to display the initial page
+            }
+
+        })
+        .catch((error) => {
+            console.error("Error fetching Product:", error);
+        });
+}
 
 // Function to update the page with the current data
 function updatePage() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    // const menu = document.getElementById("menu");
     const containerMenu = document.getElementById("containerMenu")
-    // Clear the existing content on the page
-    while (containerMenu.firstChild) {
-        containerMenu.removeChild(containerMenu.firstChild);
-    }
 
+    // Clear the existing content on the page
+    containerMenu.innerHTML = ''
     // Thought to Product Create menu elements for the current page's data
     for (const item of data.slice(startIndex, endIndex)) {
         createMenuElement(item);
@@ -45,46 +58,34 @@ function updatePage() {
 
 function createPaginationButtons() {
     const totalPages = Math.ceil(data.length / itemsPerPage);
-    const pagination = document.getElementById("pagination");
 
-    const activeBtn = "flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
 
-    // Clear the existing pagination buttons
-    while (pagination.firstChild) {
-        pagination.removeChild(pagination.firstChild);
-    }
 
-    // Create "Previous" button
-    const prevButton = document.createElement("button");
-    prevButton.classList = activeBtn
-    prevButton.textContent = "Previous";
-    prevButton.addEventListener('click', () => {
+
+    document.getElementById("prevBtn").addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
             updatePage();
 
         }
     });
-    pagination.appendChild(prevButton);
 
 
 
+    document.getElementById("currentPage").textContent = currentPage
 
-    // Create "Next" button
-    const nextButton = document.createElement("button");
-    nextButton.textContent = "Next";
-    nextButton.classList = activeBtn
-    nextButton.addEventListener('click', () => {
+
+    document.getElementById("nextBtn").addEventListener('click', () => {
         if (currentPage < totalPages) {
             currentPage++;
             updatePage();
-            nextButton.disabled = false;
+
 
 
         }
 
     });
-    pagination.appendChild(nextButton);
+
 }
 
 

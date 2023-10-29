@@ -1,35 +1,30 @@
+// ...
 
-async function filterMenu(category) {
-
-    const response = await fetch("http://localhost:5000/checker", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify({ "prompt": "oil" }),
-    })
-    const movies = await response.json();
-    console.log(movies);
-    const menuItems = document.querySelectorAll(".cardMenu");
-    const filterButtons = document.querySelectorAll(".filter-button");
-
-    filterButtons.forEach((button) => {
-        button.classList.remove("activeButton");
+// Add event listener to filter buttons
+const filterButtons = document.querySelectorAll(".filter-button");
+filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const category = button.textContent;
+        // filterMenu(category);
+        paginationFetch(category)
+        console.log("filterbutton")
     });
+});
 
-    filterButtons.forEach((button) => {
-        if (button.textContent.toLowerCase() === category.toLowerCase()) {
-            button.classList.add("activeButton");
-        }
-    });
+// ...
 
-    menuItems.forEach((item) => {
-        const itemCategory = item.dataset.category;
-        if (category === "all" || itemCategory.toLowerCase() === category.toLowerCase()) {
-            item.style.display = "block"; // Show matching items
-        } else {
-            item.style.display = "none"; // Hide non-matching items
-        }
-    });
-}
+// Modify the filterMenu function
+// async function filterMenu(category) {
+//     // You can keep the code that fetches the filtered data from the server
+
+//     const menuItems = document.querySelectorAll(".cardMenu");
+
+//     menuItems.forEach((item) => {
+//         const itemCategory = item.dataset.category;
+//         if (category === "all" || itemCategory.toLowerCase() === category.toLowerCase()) {
+//             item.style.display = "block"; // Show matching items
+//         } else {
+//             item.style.display = "none"; // Hide non-matching items
+//         }
+//     });
+// }

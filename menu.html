@@ -16,7 +16,108 @@
       background-color: red !important;
       color: white !important;
     }
-  </style>
+</style>
+
+<body>
+    <div class="container mx-auto ">
+
+
+        <!-- Start NavBar<Fadi> Part -->
+        <header class="bg-white/30 fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
+            <nav class="bg-white p-4">
+                <div class="container mx-auto flex justify-between items-center">
+                    <div class="text-black text-lg font-bold">Logo</div>
+                    <div class="hidden md:flex space-x-10">
+                        <a href="index.html"
+                            class="text-black bg-neutral-400 hover:text-red-600 rounded-md px-1 t text-lg">Home</a>
+                        <a href="about.html" class="text-black text-lg hover:text-red-600">About</a>
+                        <a href="menu.html" class="text-black text-lg hover:text-red-600">Menu</a>
+                        <a href="customOrder.html" class="text-black text-lg hover:text-red-600">CustomO rder.html</a>
+                        <a href="contact.html" class="text-black text-lg hover:text-red-600">Contact</a>
+                    </div>
+                    <div class="cursor-pointer">
+                        <a id="cartIcon">
+                            <i class="transition fas fa-shopping-cart hover:rotate-45 hover:transition"
+                                style="color: #8b8b8b"></i>
+
+
+                        </a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="menu-toggle" class="text-black focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobile-menu" class="md:hidden hidden bg-gray-700 p-4">
+                    <a href="#" class="block text-white py-2">Home</a>
+                    <a href="#" class="block text-white py-2">About</a>
+                    <a href="#" class="block text-white py-2">Services</a>
+                    <a href="#" class="block text-white py-2">Contact</a>
+                </div>
+            </nav>
+        </header>
+        <!-- END NavBar Part -->
+
+
+        <!-- Start HomePage<Yassine> Part -->
+        <main>
+            <section class="header-banner h-96 w-full bg-yellow-50 bg-[url('assets/bannerbackground-Menu.png')]">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <h1 class="text-center text-3xl md:text-4xl lg:text-5xl poppins font-semibold text-gray-700">Best
+                        food waiting for your belly</h1>
+                    <div
+                        class="rounded-full p-1 box-border mt-8 bg-white overflow-hidden ring-red-300 focus:ring-4 w-96 flex items-center">
+                        <input type="text" class=" rounded-full px-4 focus:outline-none w-full bg-transparent"
+                            placeholder="Search here ......."><button
+                            class="text-sm bg-red-500 py-3 px-6 rounded-full text-white poppins ring-red-300 focus:ring-4 transition duration-300 hover:scale-105 transform">Search</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="my-12 max-w-screen-xl mx-auto px-6 ">
+                <div class="flex items-center justify-center space-x-6 cursor-pointer">
+                    <button class="filter-button poppins rounded-full px-4 py-1 activeButton"
+                        onclick="filterMenu('all')">all</button>
+                    <button class="filter-button poppins rounded-full px-4 py-1"
+                        onclick="filterMenu('Nodles')">Nodles</button>
+                    <button class="filter-button poppins rounded-full px-4 py-1"
+                        onclick="filterMenu('Sushi')">sushi</button>
+
+
+
+                </div>
+
+
+
+                <div id="containerMenu" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+
+
+
+
+                </div>
+            </section>
+
+        </main>
+        <!-- Paginations Buttons -->
+        <div id="pagination" class="flex my-12 justify-center gap-5">
+            <button id="prevBtn"
+                class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">Previw</button>
+
+            <span id="currentPage"></span>
+            <button id="nextBtn"
+                class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">Next</button>
+        </div>
+        =
+
+        <!-- END HomePage<Yassine> Part -->
+
 
   <body>
     <div class="container mx-auto">
