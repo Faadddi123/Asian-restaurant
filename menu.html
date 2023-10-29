@@ -30,7 +30,7 @@
                             class="text-black bg-neutral-400 hover:text-red-600 rounded-md px-1 t text-lg">Home</a>
                         <a href="about.html" class="text-black text-lg hover:text-red-600">About</a>
                         <a href="menu.html" class="text-black text-lg hover:text-red-600">Menu</a>
-                        <a href="customOrder.html" class="text-black text-lg hover:text-red-600">CustomO rder.html</a>
+                        <a href="customOrder.html" class="text-black text-lg hover:text-red-600">Custom Order</a>
                         <a href="contact.html" class="text-black text-lg hover:text-red-600">Contact</a>
                     </div>
                     <div class="cursor-pointer">
@@ -84,11 +84,12 @@
                     <button class="filter-button poppins rounded-full px-4 py-1 activeButton"
                         onclick="filterMenu('all')">all</button>
                     <button class="filter-button poppins rounded-full px-4 py-1"
-                        onclick="filterMenu('Nodles')">Nodles</button>
+                        onclick="filterMenu('Breakfast')">Breakfast</button>
                     <button class="filter-button poppins rounded-full px-4 py-1"
-                        onclick="filterMenu('Sushi')">sushi</button>
+                        onclick="filterMenu('Lunch')">Lunch</button>
 
-
+                    <button class="filter-button poppins rounded-full px-4 py-1"
+                        onclick="filterMenu('Dinner')">Dinner</button>
 
                 </div>
 
@@ -104,15 +105,10 @@
 
         </main>
         <!-- Paginations Buttons -->
-        <div id="pagination" class="flex my-12 justify-center gap-5">
-            <button id="prevBtn"
-                class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">Previw</button>
+        <div id="pagination" class="flex my-12 justify-center gap-5 cursor-pointer items-center">
 
-            <span id="currentPage"></span>
-            <button id="nextBtn"
-                class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">Next</button>
         </div>
-        =
+
 
         <!-- END HomePage<Yassine> Part -->
 

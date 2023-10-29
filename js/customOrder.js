@@ -12,7 +12,6 @@ const checkInput = async () => {
     if (inputUser.value === '') return;
     else {
         msgResponse.textContent = ``
-
         loader.classList.remove("hidden")
         const response = await fetch("https://chat-asian-hlet.onrender.com/checker", {
             method: "POST",
@@ -37,6 +36,8 @@ const checkInput = async () => {
 
             msgResponse.textContent = `baghi t9olbni kayn chi ${inputUser.value} m3a lmakla`
         }
+
+
     }
 
 }

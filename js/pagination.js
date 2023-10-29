@@ -2,7 +2,7 @@ const containerMenu = document.getElementById("containerMenu")
 
 
 // Define variables
-const itemsPerPage = 4; // Number of items per page
+const itemsPerPage = 6; // Number of items per page
 let currentPage = 1;
 let data = []; // Array to store the fetched data
 
@@ -58,36 +58,60 @@ function updatePage() {
 
 function createPaginationButtons() {
     const totalPages = Math.ceil(data.length / itemsPerPage);
+    const pagination = document.getElementById("pagination");
+
+
+    const styleBtn = "flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+
+
+    // // Clear the existing pagination buttons
+    pagination.innerHTML = ''
 
 
 
-
-    document.getElementById("prevBtn").addEventListener('click', () => {
+    // Create "Previous" button
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "Previous";
+    prevButton.classList = styleBtn
+    prevButton.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
-            updatePage();
-
+            updatePage();//create menus for current page
         }
     });
+    pagination.appendChild(prevButton);
+
+    // Create number links for pages
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement("a");
+        pageLink.textContent = i;
+
+        //add color on current number link
+        if (pageLink.textContent == currentPage) pageLink.classList.add("text-red-500")
+        pageLink.addEventListener('click', () => {
+            currentPage = i;
+
+            updatePage(); //create menus for current page
+        });
+        pagination.appendChild(pageLink);
+    }
 
 
 
-    document.getElementById("currentPage").textContent = currentPage
-
-
-    document.getElementById("nextBtn").addEventListener('click', () => {
+    // Create "Next" button
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.classList = styleBtn
+    nextButton.addEventListener('click', () => {
         if (currentPage < totalPages) {
             currentPage++;
-            updatePage();
-
-
-
+            updatePage();//create menus for current page
         }
-
     });
+    pagination.appendChild(nextButton);
+
 
 }
-
 
 
 
