@@ -71,7 +71,7 @@ function createPaginationButtons() {
 
     // Create "Previous" button
     const prevButton = document.createElement("button");
-    prevButton.textContent = "Previous";
+    prevButton.textContent = "<";
     prevButton.classList = styleBtn
     prevButton.addEventListener('click', () => {
         if (currentPage > 1) {
@@ -84,6 +84,7 @@ function createPaginationButtons() {
     // Create number links for pages
     for (let i = 1; i <= totalPages; i++) {
         const pageLink = document.createElement("a");
+        pageLink.classList = styleBtn
         pageLink.textContent = i;
 
         //add color on current number link
@@ -100,7 +101,7 @@ function createPaginationButtons() {
 
     // Create "Next" button
     const nextButton = document.createElement("button");
-    nextButton.textContent = "Next";
+    nextButton.textContent = ">";
     nextButton.classList = styleBtn
     nextButton.addEventListener('click', () => {
         if (currentPage < totalPages) {
