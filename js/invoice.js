@@ -7,7 +7,8 @@ listCards.forEach(element => {
 
     item.innerHTML = `<div class="">
     <div>
-        ${element.name}
+    <a href="${window.location.origin}/customOrder.html?id=${element.id}">${element.name}</a>
+        
     </div>
     <div class="text-gray-400">
     ${element.category}
@@ -25,5 +26,20 @@ listCards.forEach(element => {
 
 
 
+
+
+const print = document.getElementById("print")
+
+print.addEventListener("click", () => {
+    var divToPrint = document.getElementById('invoice');
+    var newWin = window.open('', 'Print-Window');
+    newWin.document.open();
+    newWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles.css"></head><body>');
+    newWin.document.write(divToPrint.innerHTML);
+    newWin.document.write('</body></html>');
+    newWin.document.close();
+    newWin.print();
+    newWin.close();
+})
 
 
