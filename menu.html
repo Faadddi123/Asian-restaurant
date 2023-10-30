@@ -14,6 +14,11 @@
         background-color: red !important;
         color: white !important;
     }
+
+    .activeLink {
+        border-bottom: 2px !important;
+        border-color: red !important;
+    }
 </style>
 
 <body>
@@ -27,16 +32,16 @@
                     <div class="text-black text-lg font-bold">Logo</div>
                     <div class="hidden md:flex space-x-10">
                         <a href="index.html"
-                            class="text-black bg-neutral-400 hover:text-red-600 rounded-md px-1 t text-lg">Home</a>
+                            class="text-black  hover:text-red-500  px-1 t text-lg  border-b-2 ">Home</a>
                         <a href="about.html" class="text-black text-lg hover:text-red-600">About</a>
-                        <a href="menu.html" class="text-black text-lg hover:text-red-600">Menu</a>
-                        <a href="customOrder.html" class="text-black text-lg hover:text-red-600">Custom Order</a>
+                        <a href="menu.html" class="text-black text-lg hover:text-red-600">menu</a>
+                        <!-- <a href="customOrder.html" class="text-black text-lg hover:text-red-600">Custom Order</a> -->
                         <a href="contact.html" class="text-black text-lg hover:text-red-600">Contact</a>
                     </div>
                     <div class="cursor-pointer">
                         <a id="cartIcon">
-                            <i class="transition fas fa-shopping-cart hover:rotate-45 hover:transition"
-                                style="color: #8b8b8b"></i>
+                            <i
+                                class="transition fas fa-shopping-cart hover:rotate-45 hover:transition text-[#8b8b8b]  hover:text-red-500 "></i>
 
 
                         </a>
@@ -51,11 +56,15 @@
                         </button>
                     </div>
                 </div>
-                <div id="mobile-menu" class="md:hidden hidden bg-gray-700 p-4">
-                    <a href="#" class="block text-white py-2">Home</a>
-                    <a href="#" class="block text-white py-2">About</a>
-                    <a href="#" class="block text-white py-2">Services</a>
-                    <a href="#" class="block text-white py-2">Contact</a>
+                <div id="mobile-menu" class="md:hidden hidden bg-white/50 p-4">
+                    <a id="link-navbar" href="index.html"
+                        class="block text-black hover:bg-red-500 hover:text-white  py-2 ">Home</a>
+                    <a id="link-navbar" href="about.html"
+                        class="block text-black hover:bg-red-500 hover:text-white  py-2">About</a>
+                    <a id="link-navbar" href="menu.html"
+                        class="block text-black hover:bg-red-500 hover:text-white  py-2">Menu</a>
+                    <a id="link-navbar" href="contact.html"
+                        class="block text-black hover:bg-red-500 hover:text-white py-2">Contact</a>
                 </div>
             </nav>
         </header>
@@ -183,9 +192,9 @@
         </footer>
 
         <!-- END Footer<Fadi> Part -->
+        <script src="js/fadi.js"></script>
         <script src="js/pagination.js"></script>
         <script src="js/cart.js"></script>
-        <script src="js/fadi.js"></script>
         <script src="js/filter.js"></script>
 </body>
 
