@@ -16,7 +16,6 @@ listCards.forEach(element => {
     <div class="flex justify-between lg:w-96 lg:mr-10 md:w-80 md:mr-5 sm:w-80 sm:mr-5 w-60 mr-5">
     <div>$${element.price}</div>
     <div>${element.quantity}</div>
-    <div>50%</div>
     <div>$${element.price * element.quantity}</div>
     
     </div>`
