@@ -1,4 +1,6 @@
 
+// let listCards = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+
 const invoiceTable = document.getElementById("invoice-table")
 
 listCards.forEach(element => {
@@ -28,18 +30,18 @@ listCards.forEach(element => {
 
 
 
-const print = document.getElementById("print")
+const print = document.getElementById("print-btn")
 
 print.addEventListener("click", () => {
-    var divToPrint = document.getElementById('invoice');
+    console.log("print")
     var newWin = window.open('', 'Print-Window');
     newWin.document.open();
     newWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles.css"></head><body>');
-    newWin.document.write(divToPrint.innerHTML);
+    newWin.document.write(invoiceTable.innerHTML);
     newWin.document.write('</body></html>');
     newWin.document.close();
     newWin.print();
-    newWin.close();
+    // newWin.close();
 })
 
 
