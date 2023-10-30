@@ -7,18 +7,22 @@ menuToggle.addEventListener("click", () => {
 
 
 
+const links = document.querySelectorAll("#link-navbar");
+const url = window.location.href;
 
 
-console.log(url)
+
+
 
 
 window.addEventListener("load", () => {
-  const links = document.querySelectorAll("#link-navbar");
-  const url = window.location.href;
   links.forEach((link) => {
-    console.log(link.href)
+
     if (url === link.href) {
       link.classList.add("activeLink");
+      console.log(url)
+      console.log(link)
+      console.log("hero")
     } else {
       link.classList.remove("activeLink");
     }

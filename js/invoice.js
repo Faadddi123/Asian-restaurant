@@ -1,5 +1,5 @@
 
-let listCards = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+// let listCards = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 
 const invoiceTable = document.getElementById("invoice-table")
 
