@@ -100,6 +100,7 @@ const reloadCard = () => {
     // update localstorage
     const updater = listCards;
     localStorage.setItem("cart", JSON.stringify(updater))
+    const total = document.getElementById("totalPrice")
 
     //clear container cart
     listCard.innerHTML = '';
@@ -110,7 +111,7 @@ const reloadCard = () => {
         console.log("holad")
         let msgEmptyCart = document.createElement('p');
         msgEmptyCart.textContent = 'Cart Empty Put Some Food Asian';
-
+        total.textContent = `$0`
         listCard.appendChild(msgEmptyCart);
         return;
     }
@@ -159,7 +160,6 @@ const reloadCard = () => {
                 listCard.appendChild(newDiv);
             }
         })
-        const total = document.getElementById("totalPrice")
         total.textContent = `$ ${totalPrice}`
     }
     // quantity.innerText = count;
