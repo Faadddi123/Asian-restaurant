@@ -1,0 +1,12 @@
+/* Put here all css out of tailwind css */
+
+.activeButton {
+  background-color: red !important;
+  color: white !important;
+}
+
+.activeLink {
+  border-bottom: solid red !important;
+  color: red !important;
+  width: 45px;
+}
