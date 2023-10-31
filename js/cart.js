@@ -9,10 +9,13 @@ let cartIcon = document.getElementById("cartIcon")
 let btnCheckout = document.getElementById("btn-Checkout")
 
 
-// when clcik 
+// when clcik close btn on cart 
 closeShopping.addEventListener('click', () => {
+    // Hide cart
     openShopping.classList.add('hidden');
 })
+
+// when clcik on cart icon <remove hide class or add it>
 cartIcon.addEventListener('click', () => {
 
     if (openShopping.classList.contains('hidden')) {
@@ -23,7 +26,7 @@ cartIcon.addEventListener('click', () => {
     }
 })
 
-
+//when user click on btn checkout in cart
 btnCheckout.addEventListener("click", () => {
     onCheckoutBtn()
 })
@@ -40,6 +43,7 @@ async function addToCard(id) {
     if (index === -1) {
         const item = await findOne(id)
         listCards.push({ ...item, quantity: 1 })
+
     }
     else {
         // if product already in cart incress it with 1
@@ -48,12 +52,14 @@ async function addToCard(id) {
     }
     //after that update html cart
     reloadCard();
-
+    //display toast 
+    displayMsgProductAdded()
     // openShopping.classList.remove('hidden');
     displayCartNotification()
 }
+console.log("cart")
 
-
+//this for display and change value length items in cart
 const displayCartNotification = () => {
     const notificationCart = document.getElementById("cart-Notification")
     if (listCards.length > 0) {
@@ -89,9 +95,23 @@ async function changeQuantity(id, quantity, isRemove) {
         listCards.splice(index, 1)
 
     } else {
-        const item = await findOne(listCards[index].id)
-        listCards[index].quantity = quantity;
-        listCards[index].price = quantity * item.price;
+        const item = listCards[index]
+
+        if (item.mainPrice) {
+            console.log("main")
+            console.log(item)
+            listCards[index].quantity = quantity;
+            listCards[index].price = item.mainPrice * quantity
+
+        } else {
+            const itemMA = await findOne(id)
+            listCards[index].quantity = quantity;
+            listCards[index].price = itemMA.price * quantity
+            console.log(listCards[index])
+        }
+
+
+
     }
     //after that update html cart 
     reloadCard();
@@ -102,7 +122,7 @@ async function changeQuantity(id, quantity, isRemove) {
 
 /// get one product by id
 const findOne = async (id) => {
-    const response = await fetch("../dummydata.json")
+    const response = await fetch("js/dummydata.json")
     const products = await response.json();
     const found = await products.find((element) => element.id === id);
     return found
@@ -132,13 +152,14 @@ const reloadCard = () => {
         msgEmptyCart.textContent = 'Cart Empty Put Some Food Asian';
         total.textContent = `$0`
         listCard.appendChild(msgEmptyCart);
+        openShopping.classList.add('hidden');
         return;
     }
 
     // if there is a products in cart create html for it
 
     else {
-        let count = 0;
+
         let totalPrice = 0;
         listCards.forEach((item) => {
             totalPrice = totalPrice + item.price;
@@ -157,9 +178,9 @@ const reloadCard = () => {
             <div>
             <div class="flex justify-between text-base font-medium text-gray-900">
             <h3>
-            <a href="#">Throwback Hip Bag</a>
+            <a">${item.name}</a>
             </h3>
-            <p class="ml-4">$${item.price}</p>
+            <p class="ml-4">$ ${item.price}</p>
             </div>
             <p class="mt-1 text-sm text-gray-500">${item.category}</p>
             </div>
@@ -168,7 +189,7 @@ const reloadCard = () => {
             <p class="text-gray-500">Qty ${item.quantity}</p>
             <button onclick="changeQuantity(${item.id}, ${item.quantity + 1},${false})">+</button>
             <div class="flex">
-            <button onclick="changeQuantity(${item.id}, ${item.quantity - 1},${true})"
+            <button onclick="changeQuantity(${item.id}, ${item.quantity},${true})"
              type="button"
             class="font-medium text-red-600 hover:text-red-500">Remove</button>
             </div>
@@ -179,7 +200,7 @@ const reloadCard = () => {
                 listCard.appendChild(newDiv);
             }
         })
-        total.textContent = `$ ${totalPrice}`
+        total.textContent = `$ ${totalPrice.toFixed(2)}`
     }
     // quantity.innerText = count;
 
@@ -194,14 +215,67 @@ const reloadCard = () => {
 // build art with items from local storage everytime  page load
 window.addEventListener("load", (event) => {
     reloadCard()
-
-
 });
+
+
+
+
+// This Fun To Display Toast When user add item to cart
+const displayMsgProductAdded = () => {
+
+    //Ret container wher i put all toast
+    const toastContainer = document.getElementById("toast-NewProduct");
+
+    // Remove the 'hidden' class to make the container visible
+    toastContainer.classList.remove('hidden');
+
+
+    // Add Html To Toast Card
+    const cardToast = document.createElement("div");
+    cardToast.classList = "transform scale-0 transition-transform duration-500 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow "
+    cardToast.innerHTML = ` 
+    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg ">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+        </svg>
+        <span class="sr-only">Check icon</span>
+    </div>
+    
+    <div class="ml-3 text-sm font-normal">Added!.</div>
+    
+`;
+    // Add the toast to the container
+    toastContainer.appendChild(cardToast);
+
+    // Trigger a reflow to apply the initial scale
+    cardToast.offsetWidth;
+
+    // wdd the scale-100 class to animate scrolling
+    cardToast.classList.add('scale-100');
+
+    // Remove the toast message after a certain time
+    setTimeout(() => {
+        cardToast.classList.remove('scale-100');
+
+        // Remove the toast message after the animation completes
+        cardToast.addEventListener('transitionend', () => {
+            cardToast.remove();
+
+            // If there are no more toasts, Hide it
+            if (toastContainer.children.length === 0) {
+                toastContainer.classList.add('hidden');
+            }
+        });
+    }, 1500);
+}
+
 
 
 //this function display msg when user clcik on checkout btn
 const modle = document.getElementById("modle-Checkout")
 const modleBody = document.createElement("div")
+
+// this function work when user click on chechout btn in cart
 const onCheckoutBtn = () => {
     modleBody.classList = "fixed top-10 left-0 right-0 flex  bg-black/10 pt-10 px-8 w-full  items-start justify-center h-screen"
     console.log(listCards.length)
@@ -210,7 +284,7 @@ const onCheckoutBtn = () => {
     if (listCards.length > 0) {
 
         modleBody.innerHTML = `
-        <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div id="toast-success" class="z-30 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
     <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
@@ -235,7 +309,7 @@ const onCheckoutBtn = () => {
 
     else {
         modleBody.innerHTML = `
-        <div id="toast-danger" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div id="toast-danger" class=" z-30 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
         <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"/>
