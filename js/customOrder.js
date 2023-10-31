@@ -21,7 +21,8 @@ const inputDiv = document.getElementById("input-div")
 
 // checking extra  input user
 const checkInput = async () => {
-    console.log(inputUser.value)
+
+    // validate input 
     if (inputUser.value.trim() === '') {
 
         msgResponse.textContent = "Input is required"
@@ -30,41 +31,52 @@ const checkInput = async () => {
     }
 
     else {
-        msgResponse.textContent = ""
+
 
         // controlle inputs and btns
+        msgResponse.textContent = ""
         loader.classList.remove("hidden")
         checkerBtn.disabled = true;
         checkerBtn.classList.add("opacity-25")
 
         const result = await getRespoFromChatGPt()
-
-
-        console.log(result)
-
         // controlle inputs and btns
         loader.classList.add("hidden")
         checkerBtn.disabled = false;
         checkerBtn.classList.remove("opacity-25")
 
-        if (result.data.includes("True")) {
-            extraPrice = Math.floor(Math.random() * 10) + 1;
-            grandTotalValue = parseFloat(grandTotalValue) + extraPrice;
-            OptionsTotalPriceValue = OptionsTotalPriceValue + extraPrice;
-            OptionsTotalPrice.textContent = `$${OptionsTotalPriceValue.toFixed(2)}`;
-
-            GrandTotal.textContent = `$${grandTotalValue.toFixed(2)}`;
-            console.log(grandTotalValue)
-
-            await displayMsgExtraCorrect({ name: inputUser.value, price: extraPrice.toFixed(2) })
-        } else {
-            inputDiv.classList.remove("hidden")
-            msgResponse.textContent = `baghi t9olbni kayn chi ${inputUser.value} m3a lmakla`
+        //check if there is a error 
+        if (result === false) {
+            msgResponse.textContent = "there is a error in server"
+            msgResponse.classList.add("text-red-500")
+            setInterval(() => {
+                msgResponse.textContent = ""
+            }, 3000)
         }
 
+        else {
+
+
+
+            if (result.data.includes("True")) {
+                extraPrice = Math.floor(Math.random() * 10) + 1;
+                grandTotalValue = parseFloat(grandTotalValue) + extraPrice;
+                OptionsTotalPriceValue = OptionsTotalPriceValue + extraPrice;
+                OptionsTotalPrice.textContent = `$${OptionsTotalPriceValue.toFixed(2)}`;
+
+                GrandTotal.textContent = `$${grandTotalValue.toFixed(2)}`;
+                console.log(grandTotalValue)
+
+                await displayMsgExtraCorrect({ name: inputUser.value, price: extraPrice.toFixed(2) })
+            } else {
+                inputDiv.classList.remove("hidden")
+                msgResponse.textContent = `baghi t9olbni kayn chi ${inputUser.value} m3a lmakla`
+            }
+
+
+        }
 
     }
-
 }
 
 
@@ -77,21 +89,30 @@ checkerBtn.addEventListener("click", checkInput)
 
 // check input useing chatgpt
 const getRespoFromChatGPt = async () => {
-    const response = await fetch("https://chat-asian-hlet.onrender.com/checker", {
-        method: "POST",
-        mode: "cors", // no-cors, *cors, same-origin
+    try {
+        const response = await fetch("http://chat-rest-api-nodej-hoqi.vercel.app/checker", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: inputUser.value }),
+        });
 
-        headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data. Status: ${response.status}`);
+        }
 
-        body: JSON.stringify({ prompt: inputUser.value })
-    })
-    const result = await response.json()
-
-    return result
+        const result = await response.json();
+        console.log(result);
+        return result;
+    } catch (error) {
+        // Handle the error, e.g., by logging it or displaying a message to the user
+        console.error("An error occurred:", error);
+        return false
+        // You can also set a default result or return an error object here if needed.
+    }
 }
+
 
 
 
