@@ -10,7 +10,7 @@ menuToggle.addEventListener("click", () => {
 const links = document.querySelectorAll("#link-navbar");
 const url = window.location.href;
 
-
+console.log("fadi")
 
 
 
