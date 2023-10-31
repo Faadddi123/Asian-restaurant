@@ -52,6 +52,7 @@ async function addToCard(id) {
     // openShopping.classList.remove('hidden');
     displayCartNotification()
 }
+console.log("cart")
 
 
 const displayCartNotification = () => {

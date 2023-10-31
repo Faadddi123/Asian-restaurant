@@ -10,62 +10,31 @@
   <title>Custom Order</title>
 </head>
 
+
 <body>
   <div class=mx-auto px-4 bg-[#FFFFFF]">
-    <!-- Start NavBAr Part -->
-    <header class="bg-white/30 fixed z-50 top-0 left-0 w-full shadow-md transition duration-500">
-      <nav class="bg-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
+
+
+    <!-- Start NavBar<Fadi> Part -->
+    <header class="bg-white fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
+      <nav class="bg-white p-4 container mx-auto md:px-8">
+        <div class="flex justify-between items-center">
           <div class="text-black text-lg font-bold">Logo</div>
           <div class="hidden md:flex space-x-10">
-            <a href="#" class="text-black bg-neutral-400 hover:text-red-600 rounded-full text-lg">Home</a>
-            <a href="#" class="text-black text-lg hover:text-red-600">About</a>
-            <a href="#" class="text-black text-lg hover:text-red-600">Menu</a>
-            <a href="#" class="text-black text-lg hover:text-red-600">Pages</a>
-            <a href="#" class="text-black text-lg hover:text-red-600">Contact</a>
+            <a id="link-navbar" href="index.html" class="  px-1 t text-lg  hover:text-red-600">Home</a>
+            <a id="link-navbar" href="about.html" class=" text-lg hover:text-red-600">About</a>
+            <a id="link-navbar" href="menu.html" class=" text-lg hover:text-red-600">menu</a>
+            <!-- <a href="customOrder.html" class="text-black text-lg hover:text-red-600">Custom Order</a> -->
+            <a id="link-navbar" href="contact.html" class=" text-lg hover:text-red-600">Contact</a>
           </div>
-          <div class="">
-            <a href="#">
-              <i class="transition fas fa-shopping-cart hover:rotate-45 hover:transition" style="color: #8b8b8b"></i>
-              <div id="order-dropdown" class="hidden absolute right-0 mt-2 bg-white border rounded shadow-md">
-                <!-- Content of the order history dropdown goes here -->
-                <div class="p-2 w-64">
-                  <div class="flex mb-8">
-                    <div class="bg-red-500 w-12 h-12 mr-4 rounded-md border-spacing-1">
-                      <img src="" alt="" />
-                    </div>
-                    <div>
-                      <div class="text-red-600 text-base font-bold">zeaze</div>
-                      <div class="text-gray-600">azeazeaz</div>
-                    </div>
-                  </div>
-                  <div class="flex mb-8">
-                    <div class="bg-red-500 w-12 h-12 mr-4 rounded-md">
-                      <img src="" alt="" />
-                    </div>
-                    <div>
-                      <div class="text-red-600 text-base font-bold">zeaze</div>
-                      <div class="text-gray-600">azeazeaz</div>
-                    </div>
-                  </div>
-                  <div class="flex mb-8">
-                    <div class="bg-red-500 w-12 h-12 mr-4 rounded-md">
-                      <img src="" alt="" />
-                    </div>
-                    <div>
-                      <div class="text-red-600 text-base font-bold">zeaze</div>
-                      <div class="text-gray-600">azeazeaz</div>
-                    </div>
-                  </div>
+          <div class="cursor-pointer">
 
-                  <div class="text-center bg-red-600 rounded-md mb-5">
-                    <a class="m-3 text-white" href="">checkout</a>
-                  </div>
-                  <div class="text-center mb-4">
-                    <a class="m-3 text-red-600" href="">View in Voice</a>
-                  </div>
-                </div>
-              </div>
+            <a id="cartIcon" class="relative">
+              <i
+                class="transition fas fa-shopping-cart hover:rotate-45 hover:transition text-[#8b8b8b]  hover:text-red-500 "></i>
+              <span id="cart-Notification"
+                class="hidden absolute top-[-10px] right-[-10px]   min-w-[20px] min-h-[10px] flex justify-center items-center rounded-full bg-red-500/75 text-white"></span>
+
             </a>
           </div>
           <div class="md:hidden">
@@ -77,17 +46,21 @@
             </button>
           </div>
         </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white/50 p-4">
+          <a id="link-navbar" href="index.html" class="block text-black hover:text-red-500 important  py-2 ">Home</a>
+          <a id="link-navbar" href="about.html" class="block text-black hover:text-red-500  py-2">About</a>
+          <a id="link-navbar" href="menu.html" class="block text-black hover:text-red-500  py-2">Menu</a>
+          <a id="link-navbar" href="contact.html" class="block text-black hover:text-red-500 py-2">Contact</a>
+        </div>
       </nav>
     </header>
-    <!-- Cart Part -->
-
-    <!-- END NavBar<Fadi> Part -->
+    <!-- END NavBar Part -->
 
     <!-- Start Custom Order Page<Wail> Part -->
     <main>
       <section class="w-full h-96 bg-[url('Section(3).png')] bg-no-repeat bg-cover bg-center">
         <div class="w-full h-full bg-black opacity-75 flex flex-col items-center justify-center">
-          <p class="text-[#FFFFFF] text-6xl font-bold leading-[4rem] tracking-[.12em] mb-3 uppercase">
+          <p class="text-[#FFFFFF] text-4xl md:text-6xl pt-12 font-bold leading-[3rem]  text-center mb-3 uppercase">
             Order Customization
           </p>
           <p class="text-[#FFFFFF] w-[70%] text-center leading-[40px] text-2xl not-italic tracking-widest">
@@ -114,42 +87,42 @@
             <p class="text-gray-600 mb-4">Description of the dish goes here.</p>
 
             <!-- Additional Sauce Option -->
-            <div class="mb-4">
+            <div class="mb-4" id="input-options">
               <label class="block text-sm font-medium text-gray-600 mb-1">Additional Sauce</label>
               <div class="flex">
                 <div class="w-1/3">
                   <div class="flex items-start">
-                    <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="0" />
+                    <input value="0" type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500"
+                      name="sauce" />
                     <span class="ml-2">None [0.00$]</span>
                   </div>
                   <div class="flex items-start">
-                    <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="1" />
+                    <input id="Soy-Sauce" type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500"
+                      name="sauce" value="0.23" />
                     <span class="ml-2">Soy Sauce [0.23$]</span>
                   </div>
                 </div>
                 <div class="w-1/3">
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="2" />
+                      value="0.23" />
                     <span class="ml-2">Mushroom soy [0.23$]</span>
                   </div>
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="2" />
+                      value="0.23" />
                     <span class="ml-2">Teriyaki Sauce [0.23$]</span>
                   </div>
                 </div>
                 <div class="w-1/3">
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="3" />
+                      value="0.23" />
                     <span class="ml-2">Sweet Chili Sauce [0.23$]</span>
                   </div>
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="3" />
+                      value="0.23" />
                     <span class="ml-2">Light soy sauce [0.23$]</span>
                   </div>
                 </div>
@@ -157,61 +130,62 @@
             </div>
 
             <!-- Toppings Option -->
-            <div class="mb-4">
+            <div class="mb-4" id="input-options">
               <label class="block text-sm font-medium text-gray-600 mb-1">Toppings</label>
               <div class="flex">
                 <div class="w-1/3">
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="0" />
+                      value="1.00" />
                     <span class="ml-2">Cheese [1.00$]</span>
                   </div>
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="1" />
+                      value="1.23" />
                     <span class="ml-2">Bacon [1.23$]</span>
                   </div>
                 </div>
                 <div class="w-1/3">
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="2" />
+                      value="1.23" />
                     <span class="ml-2">Mushrooms [1.23$]</span>
                   </div>
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="2" />
+                      value="1.23" />
                     <span class="ml-2">Onions [1.23$]</span>
                   </div>
                 </div>
                 <div class="w-1/3">
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="3" />
+                      value="1.23" />
                     <span class="ml-2">Olives [1.23$]</span>
                   </div>
                   <div class="flex items-start">
                     <input type="checkbox" class="form-radio h-5 w-5 text-red-500 accent-red-500" name="sauce"
-                      value="3" />
+                      value="1.23" />
                     <span class="ml-2">Spinach [1.23$]</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div id="loader"
-              class="hidden w-12 h-12 rounded-full animate-spin border-4 border-solid border-green-500 border-t-transparent">
-            </div>
+
             <p id="msgResponse"></p>
             <!-- Extra Information -->
             <div class="mb-4 inline">
               <label class="block text-sm font-medium text-gray-600 mb-1">Extra Information</label>
               <div class="flex">
-                <textarea id="input-user" class="border outline- py-2 px-2" cols="50"></textarea>
+                <input id="input-user" class="border outline- py-2 px-2"></input>
                 <button id="checker"
-                  class="inline bg-red-500 p-5 text-white hover:bg-red-400 transition duration-300 ease-in-out">
+                  class="inline bg-red-500 p-2 text-white hover:bg-red-400 transition duration-300 ease-in-out">
                   Check
                 </button>
+                <div id="loader"
+                  class="hidden w-12 h-12 rounded-full animate-spin border-4 border-solid border-green-500 border-t-transparent">
+                </div>
               </div>
             </div>
 
@@ -219,15 +193,15 @@
             <div class="mt-24 mb-20">
               <div class="flex justify-between">
                 <h3 class="text-xl font-bold mb-2">Product total:</h3>
-                <span id="totalPrice" class="text-2xl text-red-500">$10.99</span>
+                <span id="productPrice" class="text-2xl text-red-500">$10.99</span>
               </div>
               <div class="flex justify-between">
                 <h3 class="text-xl font-bold mb-">Options total:</h3>
-                <span id="totalPrice" class="text-2xl text-red-500">$00.00</span>
+                <span id="OptionsTotalPrice" class="text-2xl text-red-500">$00.00</span>
               </div>
               <div class="flex justify-between">
                 <h3 class="text-xl font-bold mb-2">Grand total:</h3>
-                <span id="totalPrice" class="text-2xl text-red-500">$10.99</span>
+                <span id="GrandTotal" class="text-2xl text-red-500">$10.99</span>
               </div>
             </div>
             <div>
@@ -240,13 +214,95 @@
       </section>
     </main>
     <!-- End Custom Order Page<Wail> Part -->
+    <!-- cCart Part -->
 
-    <!-- Start Footer Part -->
+    <div id="shopping" class="hidden pointer-events-none fixed inset-y-0 right-0 max-w-full pl-10 my-[60px]">
+      <div class="pointer-events-auto w-screen max-w-md h-[600px]">
+        <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+          <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+            <div class="flex items-start justify-between">
+              <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">
+                Shopping cart
+              </h2>
+              <div class="ml-3 flex h-7 items-center">
+                <button id="closeShopping" type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Close panel</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-    <!-- END Footer Part -->
+            <div class="mt-8">
+              <div class="flow-root">
+                <ul role="list" id="listCart" class="-my-6 divide-y divide-gray-200">
+                  <!-- products Added here... -->
+                </ul>
+              </div>
+            </div>
+          </div>
 
-    <script src="js/getProduct.js"></script>
+          <div class="border-t border-gray-200 px-4 py-6 sm:px-6 ">
+            <div class="flex justify-between text-base font-medium text-gray-900">
+              <p>Subtotal</p>
+              <p id="totalPrice">$0</p>
+            </div>
+            <p class="mt-0.5 text-sm text-gray-500">
+              Shipping and taxes calculated at checkout.
+            </p>
+            <div class="mt-6">
+              <a id="btn-Checkout"
+                class="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700">Checkout</a>
+            </div>
+            <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+              <p>
+                or
+                <a href="/invoice.html" type="button" class="font-medium  text-red-600 hover:text-red-500">
+                  View in Invoice
+
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Part -->
+
+
+
+    <!--Start  Modle -->
+
+    <div id="modle-Checkout">
+
+    </div>
+    <!--Start  Modle -->
+    <!-- Start Footer<Fadi> Part -->
+
+    <footer class="bg-black shadow dark:bg-black">
+      <div
+        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between align-middle justify-center h-32">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+            class="hover:underline">AsianFood.ma</a>. All Rights
+          Reserved.
+        </span>
+        <div class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+          <div class="mr-8">Terms of Service</div>
+          <div>Privacy Policy</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- END Footer<Fadi> Part -->
+    <!-- <script src="js/getProduct.js"></script> -->
     <script src="js/customOrder.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/fadi.js"></script>
+
 </body>
 
 </html>
