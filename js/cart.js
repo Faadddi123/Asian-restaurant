@@ -96,7 +96,7 @@ async function changeQuantity(id, quantity, isRemove) {
             console.log("main")
             console.log(item)
             listCards[index].quantity = quantity;
-            listCards[index].price = item.price * quantity
+            listCards[index].price = item.mainPrice * quantity
 
         } else {
             const itemMA = await findOne(id)
@@ -194,7 +194,7 @@ const reloadCard = () => {
                 listCard.appendChild(newDiv);
             }
         })
-        total.textContent = `$ ${totalPrice}`
+        total.textContent = `$ ${totalPrice.toFixed(2)}`
     }
     // quantity.innerText = count;
 

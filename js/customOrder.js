@@ -150,10 +150,11 @@ window.addEventListener("load", async () => {
         id: Math.floor(Math.random() * 80) + 20,
         name: `Extra ${product.name}`,
         category: product.category,
-        mainPrice: product.price,
+        // mainPrice: product.price,
         url: product.url,
 
-        price: product.price,
+
+
     }
 
 
@@ -212,6 +213,7 @@ const addExtraToCart = document.getElementById("addExtraToCart")
 addExtraToCart.addEventListener("click", addToCardCostomOrder)
 async function addToCardCostomOrder() {
     NewProduct.price = +grandTotalValue.toFixed(2)
+    NewProduct.mainPrice = +grandTotalValue.toFixed(2)
 
     console.log(NewProduct.price)
 
