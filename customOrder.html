@@ -175,10 +175,10 @@
 
             <p id="msgResponse"></p>
             <!-- Extra Information -->
-            <div class="mb-4 inline">
+            <div class="mb-4 inline ">
               <label class="block text-sm font-medium text-gray-600 mb-1">Extra Information</label>
-              <div class="flex">
-                <input id="input-user" class="border outline- py-2 px-2"></input>
+              <div id="input-div" class="flex">
+                <input id="input-user" class="border  outline- py-2 px-2"></input>
                 <button id="checker"
                   class="inline bg-red-500 p-2 text-white hover:bg-red-400 transition duration-300 ease-in-out">
                   Check
@@ -186,6 +186,13 @@
                 <div id="loader"
                   class="hidden w-12 h-12 rounded-full animate-spin border-4 border-solid border-green-500 border-t-transparent">
                 </div>
+              </div>
+              <div>
+
+              </div>
+
+              <div id="extra-done">
+
               </div>
             </div>
 
@@ -197,7 +204,7 @@
               </div>
               <div class="flex justify-between">
                 <h3 class="text-xl font-bold mb-">Options total:</h3>
-                <span id="OptionsTotalPrice" class="text-2xl text-red-500">$00.00</span>
+                <span id="OptionsTotalPrice" class="text-2xl text-red-500">$0.00</span>
               </div>
               <div class="flex justify-between">
                 <h3 class="text-xl font-bold mb-2">Grand total:</h3>
@@ -205,9 +212,9 @@
               </div>
             </div>
             <div>
-              <a href=""
+              <button id="addExtraToCart"
                 class="bg-red-500 px-9 py-6 rounded-md text-white hover:bg-red-400 transition duration-300 ease-in-out font-bold">Order
-                Now</a>
+                Now</button>
             </div>
           </div>
         </div>

@@ -90,9 +90,23 @@ async function changeQuantity(id, quantity, isRemove) {
         listCards.splice(index, 1)
 
     } else {
-        const item = await findOne(listCards[index].id)
-        listCards[index].quantity = quantity;
-        listCards[index].price = quantity * item.price;
+        const item = listCards[index]
+
+        if (item.mainPrice) {
+            console.log("main")
+            console.log(item)
+            listCards[index].quantity = quantity;
+            listCards[index].price = item.price * quantity
+
+        } else {
+            const itemMA = await findOne(id)
+            listCards[index].quantity = quantity;
+            listCards[index].price = itemMA.price * quantity
+            console.log(listCards[index])
+        }
+
+
+
     }
     //after that update html cart 
     reloadCard();
@@ -158,9 +172,9 @@ const reloadCard = () => {
             <div>
             <div class="flex justify-between text-base font-medium text-gray-900">
             <h3>
-            <a href="#">Throwback Hip Bag</a>
+            <a">${item.name}</a>
             </h3>
-            <p class="ml-4">$${item.price}</p>
+            <p class="ml-4">$ ${item.price}</p>
             </div>
             <p class="mt-1 text-sm text-gray-500">${item.category}</p>
             </div>
@@ -169,7 +183,7 @@ const reloadCard = () => {
             <p class="text-gray-500">Qty ${item.quantity}</p>
             <button onclick="changeQuantity(${item.id}, ${item.quantity + 1},${false})">+</button>
             <div class="flex">
-            <button onclick="changeQuantity(${item.id}, ${item.quantity - 1},${true})"
+            <button onclick="changeQuantity(${item.id}, ${item.quantity},${true})"
              type="button"
             class="font-medium text-red-600 hover:text-red-500">Remove</button>
             </div>
