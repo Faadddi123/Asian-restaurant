@@ -31,17 +31,22 @@ listCards.forEach(element => {
 
 
 const print = document.getElementById("print-btn")
+const header = document.getElementById("header")
+const footer = document.getElementById("footer")
 
 print.addEventListener("click", () => {
-    console.log("print")
-    var newWin = window.open('', 'Print-Window');
-    newWin.document.open();
-    newWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles.css"></head><body>');
-    newWin.document.write(invoiceTable.innerHTML);
-    newWin.document.write('</body></html>');
-    newWin.document.close();
-    newWin.print();
-    // newWin.close();
+
+    //hide banner and footer to avoid print theme
+    header.classList.add("hidden")
+    footer.classList.add("hidden")
+
+
+    window.print();
+
+    //display theme after print
+    header.classList.remove("hidden")
+    footer.classList.remove("hidden")
+
 })
 
 
