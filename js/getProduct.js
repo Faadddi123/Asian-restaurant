@@ -33,7 +33,7 @@ window.addEventListener("load", async () => {
 /// get one product by id
 const findOneCustomOrder = async (id) => {
 
-    const response = await fetch("../dummydata.json")
+    const response = await fetch("js/dummydata.json")
     const products = await response.json();
     const found = await products.find((element) => element.id === +id);
 

@@ -11,13 +11,15 @@
 </head>
 
 <body>
-    <div class="container mx-auto sm:px-4 bg-[#FFFFFF]">
+    <div class=" bg-[#FFFFFF]">
 
         <!-- Start NavBar<Fadi> Part -->
         <header class="bg-white fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
-            <nav class="bg-white p-4 container mx-auto">
+            <nav class="bg-white p-4 container mx-auto md:px-8">
                 <div class="flex justify-between items-center">
-                    <div class="text-black text-lg font-bold">Logo</div>
+                    <a href="index.html" class="text-black text-lg font-bold"><img class="w-auto h-10"
+                            src="assets/logo.png" alt="Hashira Food">
+                    </a>
                     <div class="hidden md:flex space-x-10">
                         <a id="link-navbar" href="index.html" class="  px-1 t text-lg  hover:text-red-600">Home</a>
                         <a id="link-navbar" href="about.html" class=" text-lg hover:text-red-600">About</a>
@@ -26,10 +28,12 @@
                         <a id="link-navbar" href="contact.html" class=" text-lg hover:text-red-600">Contact</a>
                     </div>
                     <div class="cursor-pointer">
-                        <a id="cartIcon">
+
+                        <a id="cartIcon" class="relative">
                             <i
                                 class="transition fas fa-shopping-cart hover:rotate-45 hover:transition text-[#8b8b8b]  hover:text-red-500 "></i>
-
+                            <span id="cart-Notification"
+                                class="hidden absolute top-[-10px] right-[-10px]   min-w-[20px] min-h-[10px] flex justify-center items-center rounded-full bg-red-500/75 text-white"></span>
 
                         </a>
                     </div>
@@ -45,7 +49,7 @@
                 </div>
                 <div id="mobile-menu" class="md:hidden hidden bg-white/50 p-4">
                     <a id="link-navbar" href="index.html"
-                        class="block text-black hover:text-red-500  important  py-2 ">Home</a>
+                        class="block text-black hover:text-red-500 important  py-2 ">Home</a>
                     <a id="link-navbar" href="about.html" class="block text-black hover:text-red-500  py-2">About</a>
                     <a id="link-navbar" href="menu.html" class="block text-black hover:text-red-500  py-2">Menu</a>
                     <a id="link-navbar" href="contact.html" class="block text-black hover:text-red-500 py-2">Contact</a>
@@ -55,9 +59,9 @@
         <!-- END NavBar Part -->
 
         <!-- Start Invoice<Fadi> Part -->
-        <main>
+        <main class=" py-20 mx-auto container">
 
-            <div class="bg-white border-2 mt-12 shadow-2xl sm:mx-0 ">
+            <div class="bg-white  mt-12 sm:mx-0 container  px-4 pb-10">
                 <div id="invoice-table" class="border-b-2 border-gray-200 mt-16 lg:mx-32 md:mx-0  ">
                     <div
                         class="bg-red-500 mt-7 lg:mx-14 md:mx-2 sm:rounded-2xl  text-white flex p-4  justify-between font-bold mb-8">
@@ -122,10 +126,12 @@
             </div>
         </main>
         <!-- END Invoice<Fadi> Part -->
+
+
         <!-- cCart Part -->
 
-        <div id="shopping" class="hidden  pointer-events-none fixed inset-y-0 right-0 max-w-full pl-10 my-[60px]">
-            <div class="pointer-events-auto w-screen max-w-md h-[600px]">
+        <div id="shopping" class="hidden pointer-events-none fixed inset-y-0 right-0 max-w-full pl-10 my-[60px]">
+            <div class="pointer-events-auto w-screen max-w-xs md:max-w-sm h-[600px]">
                 <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                     <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                         <div class="flex items-start justify-between">
@@ -148,13 +154,13 @@
                         <div class="mt-8">
                             <div class="flow-root">
                                 <ul role="list" id="listCart" class="-my-6 divide-y divide-gray-200">
-                                    <!-- More products... -->
+                                    <!-- products Added here... -->
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
+                    <div class="border-t border-gray-200 px-4 py-6 sm:px-6 ">
                         <div class="flex justify-between text-base font-medium text-gray-900">
                             <p>Subtotal</p>
                             <p id="totalPrice">$0</p>
@@ -163,16 +169,17 @@
                             Shipping and taxes calculated at checkout.
                         </p>
                         <div class="mt-6">
-                            <a href="#"
-                                class="flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700">Checkout</a>
+                            <a id="btn-Checkout"
+                                class="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700">Checkout</a>
                         </div>
                         <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                             <p>
                                 or
-                                <button type="button" class="font-medium text-red-600 hover:text-red-500">
+                                <a href="/invoice.html" type="button"
+                                    class="font-medium  text-red-600 hover:text-red-500">
                                     View in Invoice
-                                    <span aria-hidden="true"> &rarr;</span>
-                                </button>
+
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -184,16 +191,22 @@
 
 
 
+        <!--Start  Modle -->
+
+        <div id="modle-Checkout">
+
+        </div>
+        <!--Start  Modle -->
+
         <!-- Start Footer<Fadi> Part -->
 
-        <footer class="bg-black  shadow  dark:bg-black ">
-            <div
-                class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between align-middle justify-center h-32">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+        <footer class="bg-black  shadow  dark:bg-black text-center">
+            <div class="w-full mx-auto max-w-screen-xl p-4 sm:flex  items-center justify-between align-middle h-32">
+                <span class="text-sm text-gray-500 text-center dark:text-gray-400">© 2023 <a
                         class="hover:underline">AsianFood</a>. All Rights Reserved.
                 </span>
                 <div
-                    class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                    class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 justify-center">
                     <div class="mr-8">
                         Terms of Service
                     </div>

@@ -21,7 +21,9 @@
         <header class="bg-white fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
             <nav class="bg-white p-4 container mx-auto md:px">
                 <div class="flex justify-between items-center">
-                    <div class="text-black text-lg font-bold">Logo</div>
+                    <a href="index.html" class="text-black text-lg font-bold"><img class="w-auto h-10"
+                            src="assets/logo.png" alt="Hashira Food">
+                    </a>
                     <div class="hidden md:flex space-x-10">
                         <a id="link-navbar" href="index.html" class="  px-1 t text-lg  hover:text-red-600">Home</a>
                         <a id="link-navbar" href="about.html" class=" text-lg hover:text-red-600">About</a>
@@ -59,6 +61,8 @@
             </nav>
         </header>
         <!-- END NavBar Part -->
+
+
 
 
         <!-- Start HomePage<Yassine> Part -->
@@ -106,8 +110,8 @@
 
         <!-- cCart Part -->
 
-        <div id="shopping" class="hidden pointer-events-none fixed inset-y-0 right-0 max-w-full pl-10 my-[60px]">
-            <div class="pointer-events-auto w-screen max-w-md h-[600px]">
+        <div id="shopping" class="hidden pointer-events-none fixed inset-y-0 right-0   pl-10 my-[60px]">
+            <div class="pointer-events-auto w-screen max-w-xs md:max-w-sm h-[600px]">
                 <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                     <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                         <div class="flex items-start justify-between">
@@ -173,24 +177,37 @@
 
         </div>
         <!--Start  Modle -->
+
+        <!--Start toast  Add Product  -->
+
+        <div id="toast-NewProduct" class=" fixed  top-20 flex items-center flex-col gap-1 justify-center w-full  z-50">
+
+        </div>
+        <!--Start toast Add Product  -->
+
+
+
         <!-- Start Footer<Fadi> Part -->
 
-        <footer class="bg-black shadow dark:bg-black">
-            <div
-                class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between align-middle justify-center h-32">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                        class="hover:underline">AsianFood.ma</a>. All Rights
-                    Reserved.
+        <footer class="bg-black  shadow  dark:bg-black text-center">
+            <div class="w-full mx-auto max-w-screen-xl p-4 sm:flex  items-center justify-between align-middle h-32">
+                <span class="text-sm text-gray-500 text-center dark:text-gray-400">© 2023 <a
+                        class="hover:underline">AsianFood</a>. All Rights Reserved.
                 </span>
                 <div
-                    class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                    <div class="mr-8">Terms of Service</div>
-                    <div>Privacy Policy</div>
+                    class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 justify-center">
+                    <div class="mr-8">
+                        Terms of Service
+                    </div>
+                    <div>
+                        Privacy Policy
+                    </div>
                 </div>
             </div>
         </footer>
 
         <!-- END Footer<Fadi> Part -->
+
         <script src="js/fadi.js"></script>
         <script src="js/pagination.js"></script>
         <script src="js/cart.js"></script>

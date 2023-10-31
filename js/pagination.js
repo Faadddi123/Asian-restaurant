@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
 })
 
 const paginationFetch = (category = "all") => {
-    fetch("../dummydata.json")
+    fetch("js/dummydata.json")
         .then((response) => response.json())
         .then((fetchedData) => {
             if (category === "all") {

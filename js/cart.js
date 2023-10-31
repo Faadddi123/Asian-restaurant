@@ -40,6 +40,7 @@ async function addToCard(id) {
     if (index === -1) {
         const item = await findOne(id)
         listCards.push({ ...item, quantity: 1 })
+
     }
     else {
         // if product already in cart incress it with 1
@@ -48,7 +49,8 @@ async function addToCard(id) {
     }
     //after that update html cart
     reloadCard();
-
+    //display toast 
+    displayMsgProductAdded()
     // openShopping.classList.remove('hidden');
     displayCartNotification()
 }
@@ -117,7 +119,7 @@ async function changeQuantity(id, quantity, isRemove) {
 
 /// get one product by id
 const findOne = async (id) => {
-    const response = await fetch("../dummydata.json")
+    const response = await fetch("js/dummydata.json")
     const products = await response.json();
     const found = await products.find((element) => element.id === id);
     return found
@@ -147,6 +149,7 @@ const reloadCard = () => {
         msgEmptyCart.textContent = 'Cart Empty Put Some Food Asian';
         total.textContent = `$0`
         listCard.appendChild(msgEmptyCart);
+        openShopping.classList.add('hidden');
         return;
     }
 
@@ -209,9 +212,57 @@ const reloadCard = () => {
 // build art with items from local storage everytime  page load
 window.addEventListener("load", (event) => {
     reloadCard()
-
-
 });
+
+// This Fun To Display Toast When user add item to cart
+const displayMsgProductAdded = () => {
+
+    //Ret container wher i put all toast
+    const toastContainer = document.getElementById("toast-NewProduct");
+
+    // Remove the 'hidden' class to make the container visible
+    toastContainer.classList.remove('hidden');
+
+
+    // Add Html To Toast Card
+    const cardToast = document.createElement("div");
+    cardToast.classList = "transform scale-0 transition-transform duration-500 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow "
+    cardToast.innerHTML = ` 
+    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg ">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+        </svg>
+        <span class="sr-only">Check icon</span>
+    </div>
+    
+    <div class="ml-3 text-sm font-normal">Added!.</div>
+    
+`;
+    // Add the toast to the container
+    toastContainer.appendChild(cardToast);
+
+    // Trigger a reflow to apply the initial scale
+    cardToast.offsetWidth;
+
+    // wdd the scale-100 class to animate scrolling
+    cardToast.classList.add('scale-100');
+
+    // Remove the toast message after a certain time
+    setTimeout(() => {
+        cardToast.classList.remove('scale-100');
+
+        // Remove the toast message after the animation completes
+        cardToast.addEventListener('transitionend', () => {
+            cardToast.remove();
+
+            // If there are no more toasts, Hide it
+            if (toastContainer.children.length === 0) {
+                toastContainer.classList.add('hidden');
+            }
+        });
+    }, 1500);
+}
+
 
 
 //this function display msg when user clcik on checkout btn
