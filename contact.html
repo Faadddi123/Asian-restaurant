@@ -1,138 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@100;400&family=Inter:wght@100;300&family=Italiana&family=Jura:wght@500&family=Poppins:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="tailwind.css" />
-    <title>Contact us</title>
-  </head>
 
-  <body class="font-poppins">
-    <!-- Start NavBAr Part -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@100;400&family=Inter:wght@100;300&family=Italiana&family=Jura:wght@500&family=Poppins:wght@600&display=swap"
+    rel="stylesheet" />
 
-    <!-- END NavBar Part -->
+  <link rel="stylesheet" href="global.css">
+  <title>Contact us</title>
+</head>
 
-    <!-- Start Contact<Mohamed> Part -->
+<body>
 
-    <main>
-      <section
-        class="w-full h-96 bg-[url('Section(3).png')] bg-no-repeat bg-cover bg-center"
-      >
-        <div
-          class="w-full h-full bg-black opacity-75 flex flex-col items-center justify-center"
-        >
-          <p
-            class="text-[#FFFFFF] text-6xl font-bold leading-[4rem] tracking-[.12em] mb-3 uppercase"
-          >
-            RESERVATION
-          </p>
-          <p
-            class="text-[#FFFFFF] w-[70%] text-center leading-[40px] text-2xl not-italic tracking-widest"
-          >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
+  <!-- Start NavBar<Fadi> Part -->
+  <header class="bg-white fixed z-50 top-0 left-0 w-full shadow-md transition duration-500 ">
+    <nav class="bg-white p-4 container mx-auto md:px">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="text-black text-lg font-bold"><img class="w-auto h-10" src="assets/logo.png"
+            alt="Hashira Food">
+        </a>
+        <div class="hidden md:flex space-x-10">
+          <a id="link-navbar" href="index.html" class="  px-1 t text-lg  hover:text-red-600">Home</a>
+          <a id="link-navbar" href="about.html" class=" text-lg hover:text-red-600">About</a>
+          <a id="link-navbar" href="menu.html" class=" text-lg hover:text-red-600">menu</a>
+          <!-- <a href="customOrder.html" class="text-black text-lg hover:text-red-600">Custom Order</a> -->
+          <a id="link-navbar" href="contact.html" class=" text-lg hover:text-red-600">Contact</a>
         </div>
-      </section>
-      <section class="my-10">
-        <div class="container mx-auto w-full flex flex-col items-center">
-          <form
-            action="/submit-reservation"
-            method="POST"
-            class="mx-auto pt-14 w-full flex flex-col items-center"
-            novalidate
-            id="reservation-form"
-          >
-            <h1
-              class="tracking-1.5 text-4xl font-semibold text-red-500 max-w-[1018px] md:max-w-full md:text-2xl"
-            >
-              Make an Online Reservation
-            </h1>
-            <h2
-              class="text-5xl tracking-1.5 font-semibold pb-10 max-w-[1018px] md:max-w-full md:text-4xl md:pb-8 lg:text-7xl"
-            >
-              Book a Table
+        <div class="cursor-pointer">
+
+          <a id="cartIcon" class="relative">
+            <i
+              class="transition fas fa-shopping-cart hover:rotate-45 hover:transition text-[#8b8b8b]  hover:text-red-500 "></i>
+            <span id="cart-Notification"
+              class="hidden absolute top-[-10px] right-[-10px]   min-w-[20px] min-h-[10px] flex justify-center items-center rounded-full bg-red-500/75 text-white"></span>
+
+          </a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-black focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden bg-white/50 p-4">
+        <a id="link-navbar" href="index.html" class="block text-black hover:text-red-500 important  py-2 ">Home</a>
+        <a id="link-navbar" href="about.html" class="block text-black hover:text-red-500  py-2">About</a>
+        <a id="link-navbar" href="menu.html" class="block text-black hover:text-red-500  py-2">Menu</a>
+        <a id="link-navbar" href="contact.html" class="block text-black hover:text-red-500 py-2">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <!-- END NavBar Part -->
+
+
+
+  <!-- Start Contact<Mohamed> Part -->
+
+
+  <section class="w-full h-96 bg-[url('Section(3).png')] pt-10 bg-no-repeat bg-cover bg-center ">
+    <div class="w-full h-full bg-black opacity-75 flex flex-col items-center justify-center">
+      <p class="text-[#FFFFFF]   sm:text-6xl font-bold leading-[4rem] tracking-[.12em] mt-3 uppercase">
+        RESERVATION
+      </p>
+      <p class="text-[#FFFFFF] max-w-md w-[80%] text-center leading-[40px] text-md not-italic tracking-widest">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+    </div>
+  </section>
+  <section class="my-10">
+    <div class="container m-auto px-4 w-full flex flex-col items-center">
+      <form action="/submit-reservation" method="POST" class="mx-auto pt-14 w-full flex flex-col items-center"
+        novalidate id="reservation-form">
+        <h1 class="tracking-1.5 text-4xl font-semibold text-red-500 max-w-[1018px] md:max-w-full md:text-2xl">
+          Make an Online Reservation
+        </h1>
+        <h2
+          class="text-5xl tracking-1.5 font-semibold pb-10 max-w-[1018px] md:max-w-full md:text-4xl md:pb-8 lg:text-7xl">
+          Book a Table
+        </h2>
+
+        <div class="flex justify-center flex-wrap">
+          <input class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
+            type="text" placeholder="Name" name="name" />
+          <input class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
+            type="text" placeholder="Hour" name="hour" />
+          <input class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
+            type="date" placeholder="Date" name="date" />
+          <input class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
+            type="tel" placeholder="Phone Number" name="phone" />
+          <input class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
+            type="email" placeholder="Email Address" name="email" />
+
+          <input class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
+            type="text" placeholder="Number of People" name="people" />
+          <textarea class="w-full md:w-1/2 xl:w-auto p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-2"
+            placeholder="Additional Comments" name="comments" id="" cols="109" rows="5"></textarea>
+        </div>
+
+        <button type="submit"
+          class="mt-10 w-64 h-20 rounded-full bg-red-500 text-white text-lg font-semibold tracking-wider text-center leading-10 md:w-48 md:h-16 lg:text-sm">
+          Book a Table
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- END Contact<Mohamed> Part -->
+
+
+  <!-- cCart Part -->
+
+  <div id="shopping" class="hidden pointer-events-none fixed inset-y-0 right-0   pl-10 my-[60px]">
+    <div class="pointer-events-auto w-screen max-w-xs md:max-w-md h-[600px]">
+      <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+        <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+          <div class="flex items-start justify-between">
+            <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">
+              Shopping cart
             </h2>
-
-            <div class="flex justify-center flex-wrap">
-              <input
-                class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
-                type="text"
-                placeholder="Name"
-                name="name"
-              />
-              <input
-                class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
-                type="text"
-                placeholder="Hour"
-                name="hour"
-              />
-              <input
-                class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
-                type="date"
-                placeholder="Date"
-                name="date"
-              />
-              <input
-                class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
-                type="tel"
-                placeholder="Phone Number"
-                name="phone"
-              />
-              <input
-                class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
-                type="email"
-                placeholder="Email Address"
-                name="email"
-              />
-
-              <input
-                class="w-full md:w-1/2 xl:w-1/3 p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-5 mx-1"
-                type="text"
-                placeholder="Number of People"
-                name="people"
-              />
-              <textarea
-                class="w-full md:w-1/2 xl:w-auto p-5 border-b-2 font-semibold border-red-500 bg-neutral-100 mb-2"
-                placeholder="Additional Comments"
-                name="comments"
-                id=""
-                cols="109"
-                rows="5"
-              ></textarea>
+            <div class="ml-3 flex h-7 items-center">
+              <button id="closeShopping" type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Close panel</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
+          </div>
 
-            <button
-              type="submit"
-              class="mt-10 w-64 h-20 rounded-full bg-red-500 text-white text-lg font-semibold tracking-wider text-center leading-10 md:w-48 md:h-16 lg:text-sm"
-            >
-              Book a Table
-            </button>
-          </form>
+          <div class="mt-8">
+            <div class="flow-root">
+              <ul role="list" id="listCart" class="-my-6 divide-y divide-gray-200">
+                <!-- products Added here... -->
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
-    <!-- END Contact<Mohamed> Part -->
 
-    <!-- Start Footer Part -->
+        <div class="border-t border-gray-200 px-4 py-6 sm:px-6 ">
+          <div class="flex justify-between text-base font-medium text-gray-900">
+            <p>Subtotal</p>
+            <p id="totalPrice">$0</p>
+          </div>
+          <p class="mt-0.5 text-sm text-gray-500">
+            Shipping and taxes calculated at checkout.
+          </p>
+          <div class="mt-6">
+            <a id="btn-Checkout"
+              class="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700">Checkout</a>
+          </div>
+          <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+            <p>
+              or
+              <a href="invoice.html" type="button" class="font-medium  text-red-600 hover:text-red-500">
+                View in Invoice
 
-    <!-- END Footer Part -->
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="js/formValidation.js"></script>
-  </body>
+  <!-- Cart Part -->
 
-  <style>
-    .font-poppins {
-      font-family: "Poppins", sans-serif;
-    }
-  </style>
+
+
+  <!--Start  Modle -->
+
+  <div id="modle-Checkout">
+
+  </div>
+  <!--Start  Modle -->
+
+  <!--Start toast  Add Product  -->
+
+  <div id="toast-NewProduct" class=" fixed  top-20 flex items-center flex-col gap-1 justify-center w-full  z-50">
+
+  </div>
+  <!--Start toast Add Product  -->
+
+  <!-- Start Footer<Fadi> Part -->
+
+  <footer class="bg-black  shadow  dark:bg-black text-center">
+    <div class="w-full mx-auto max-w-screen-xl p-4 sm:flex  items-center justify-between align-middle h-32">
+      <span class="text-sm text-gray-500 text-center dark:text-gray-400">© 2023 <a
+          class="hover:underline">AsianFood</a>. All Rights Reserved.
+      </span>
+      <div class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 justify-center">
+        <div class="mr-8">
+          Terms of Service
+        </div>
+        <div>
+          Privacy Policy
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- END Footer<Fadi> Part -->
+
+  <script src="js/fadi.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/formValidation.js"></script>
+</body>
+
+<style>
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+</style>
+
 </html>

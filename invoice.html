@@ -93,7 +93,7 @@
           <div class="justify-evenly align-middle	w-80 m-auto">
             <div class="flex font-bold text-xl  justify-between my-5 ">
               <div class="text-gray-500 ">Subtotal</div>
-              <div class="text-red-500 ">465$</div>
+              <div id="Subtotal-invoice" class="text-red-500 ">0$</div>
             </div>
             <div class="flex font-bold text-xl  justify-between mb-5">
               <div class="text-gray-500 ">TVA</div>
@@ -105,7 +105,7 @@
             </div>
             <div class="flex font-bold text-xl  justify-between mb-5 bg-red-300 border-2 border-red-600 p-3">
               <div class="text-black ">Total</div>
-              <div class="text-red-500 ">465$</div>
+              <div id="totalInvoice" class="text-red-500 ">0$</div>
             </div>
           </div>
           <div class="text-center">
@@ -191,7 +191,13 @@
 
     </div>
     <!--Start  Modle -->
+    <!--Start toast  if cart empty  -->
 
+    <div id="toast-invoice"
+      class=" hidden fixed  top-20 flex items-center flex-col gap-1 justify-center w-full bg-black/10 h-full z-50">
+
+    </div>
+    <!--Start toast Add Product  -->
     <!-- Start Footer<Fadi> Part -->
 
     <footer id="footer" class="bg-black  shadow  dark:bg-black text-center">
@@ -222,4 +228,4 @@
   <script src="js/fadi.js"></script>
 </body>
 
-</html> 
+</html>

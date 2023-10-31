@@ -10,3 +10,7 @@
   color: red !important;
   width: 45px;
 }
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
