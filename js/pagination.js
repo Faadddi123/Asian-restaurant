@@ -139,7 +139,7 @@ async function createMenuElement(item) {
    Now</button>
    <a 
    class="bg-transparent hover:bg-red-500 hover:text-white border border-red-500 hover:border-transparent text-black  px-6 py-2  outline-red-500 poppins rounded-full mt-24 transform transition duration-300 hover:scale-105"
-   href="${window.location.origin}/Asian-restaurant/customOrder.html?id=${item.id}"
+   href="customOrder.html?id=${item.id}"
    >Customize
    </a>
    </div>
