@@ -253,7 +253,8 @@ async function addToCardCostomOrder() {
     }
     //after that update html cart
     reloadCard();
-
+    //display toast 
+    displayMsgProductAdded()
     // openShopping.classList.remove('hidden');
     displayCartNotification()
 }

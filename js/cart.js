@@ -9,10 +9,13 @@ let cartIcon = document.getElementById("cartIcon")
 let btnCheckout = document.getElementById("btn-Checkout")
 
 
-// when clcik 
+// when clcik close btn on cart 
 closeShopping.addEventListener('click', () => {
+    // Hide cart
     openShopping.classList.add('hidden');
 })
+
+// when clcik on cart icon <remove hide class or add it>
 cartIcon.addEventListener('click', () => {
 
     if (openShopping.classList.contains('hidden')) {
@@ -23,7 +26,7 @@ cartIcon.addEventListener('click', () => {
     }
 })
 
-
+//when user click on btn checkout in cart
 btnCheckout.addEventListener("click", () => {
     onCheckoutBtn()
 })
@@ -56,7 +59,7 @@ async function addToCard(id) {
 }
 console.log("cart")
 
-
+//this for display and change value length items in cart
 const displayCartNotification = () => {
     const notificationCart = document.getElementById("cart-Notification")
     if (listCards.length > 0) {
@@ -156,7 +159,7 @@ const reloadCard = () => {
     // if there is a products in cart create html for it
 
     else {
-        let count = 0;
+       
         let totalPrice = 0;
         listCards.forEach((item) => {
             totalPrice = totalPrice + item.price;
@@ -214,6 +217,9 @@ window.addEventListener("load", (event) => {
     reloadCard()
 });
 
+
+
+
 // This Fun To Display Toast When user add item to cart
 const displayMsgProductAdded = () => {
 
@@ -268,6 +274,8 @@ const displayMsgProductAdded = () => {
 //this function display msg when user clcik on checkout btn
 const modle = document.getElementById("modle-Checkout")
 const modleBody = document.createElement("div")
+
+// this function work when user click on chechout btn in cart
 const onCheckoutBtn = () => {
     modleBody.classList = "fixed top-10 left-0 right-0 flex  bg-black/10 pt-10 px-8 w-full  items-start justify-center h-screen"
     console.log(listCards.length)
