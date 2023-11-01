@@ -1,15 +1,27 @@
 
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const bodyBome = document.getElementById("body-home");
-
+    const bodyHome = document.getElementById("body-home");
     const loadingOverlay = document.getElementById("loading-overlay");
+    const isFirstVisit = await localStorage.getItem("isFirstVisit");
+
+    //Check ifl This Is First Visit or not
+    if (!isFirstVisit) {
+
+        // loadingOverlay.style.display = "flex";
+
+        localStorage.setItem("isFirstVisit", "true");
+    } else {
 
 
+        loadingOverlay.classList.add("hidden");
 
-    // After 2s hide Loader
-    setInterval(() => {
-        loadingOverlay.style.display = "none";
-    }, 2000)
-    bodyBome.classList.remove("hidden")
+    }
+
+    setTimeout(() => {
+        loadingOverlay.classList.add("hidden");
+    }, 2000);
+
+
+    bodyHome.classList.remove("opacity-0");
 });
