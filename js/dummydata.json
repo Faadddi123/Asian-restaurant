@@ -124,5 +124,26 @@
     "category": "Dinner",
     "price": 19.5,
     "url": "assets/menu/dinner6.png"
+  },
+  {
+    "id": 19,
+    "name": "Checken Tenderion",
+    "category": "Dinner",
+    "price": 59.5,
+    "url": "assets/menu/dinner5.png"
+  },
+  {
+    "id": 20,
+    "name": "healthy Plan",
+    "category": "Lunch",
+    "price": 19.5,
+    "url": "assets/menu/lunch6.png"
+  },
+  {
+    "id": 21,
+    "name": "Ramen Bo",
+    "category": "Dinner",
+    "price": 999.5,
+    "url": "assets/menu/dinner6.png"
   }
 ]

@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
     console.log("on load")
     paginationFetch()
 })
-
+// sisko
 const paginationFetch = (category = "all") => {
     fetch("js/dummydata.json")
         .then((response) => response.json())
