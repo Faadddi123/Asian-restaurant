@@ -64,7 +64,7 @@ function createPaginationButtons() {
     const styleBtn = "flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
 
 
-    // // Clear the existing pagination buttons
+    // // Clear the existing sisko pagination buttons
     pagination.innerHTML = ''
 
 
@@ -106,7 +106,7 @@ function createPaginationButtons() {
     nextButton.addEventListener('click', () => {
         if (currentPage < totalPages) {
             currentPage++;
-            updatePage();//create menus for current page
+            updatePage();//create menus  sisko for current page
         }
     });
     pagination.appendChild(nextButton);
