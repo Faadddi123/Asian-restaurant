@@ -1,9 +1,9 @@
 
 
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", async ()=> {
     const bodyHome = document.getElementById("body-home");
     const loadingOverlay = document.getElementById("loading-overlay");
-    const isFirstVisit = await localStorage.getItem("isFirstVisit");
+    const isFirstVisit =  localStorage.getItem("isFirstVisit");
 
     //Check ifl This Is First Visit or not
     if (!isFirstVisit) {
