@@ -11,10 +11,13 @@ menuToggle.addEventListener("click", () => {
 console.log("yassine")
 
 
-const links = document.querySelectorAll("#link-navbar");
+
+
 const url = window.location.href;
 
 window.addEventListener("load", () => {
+  const links = document.querySelectorAll("#link-navbar");
+  const mainLink = document.querySelectorAll(".mainLink")
   let found = false; // Add a flag to track if a matching link was found
   links.forEach((link) => {
     if (url === link.href) {
@@ -27,7 +30,10 @@ window.addEventListener("load", () => {
 
 
   if (!found && links.length > 0) {
-    links[0].classList.add("activeLink"); // You can choose a different default link if needed
+    console.log(mainLink)
+    mainLink[0].classList.add("activeLink");
+    mainLink[1].classList.add("activeLink");
+    // You can choose a different default link if needed
   }
 });
 
