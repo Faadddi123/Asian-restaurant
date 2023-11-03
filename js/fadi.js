@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
     console.log(mainLink)
     mainLink[0].classList.add("activeLink");
     mainLink[1].classList.add("activeLink");
-    // You can choose a different default link if needed
+
   }
 });
 
